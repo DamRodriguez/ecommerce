@@ -1,0 +1,22 @@
+.scrollbarCustom {
+  overflow-y: auto;
+}
+
+.scrollbarCustom::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.scrollbarCustom::-webkit-scrollbar-thumb {
+  background-color: var(--color-on-surface-strong);
+  cursor: pointer;
+}
+
+.scrollbarCustom::-webkit-scrollbar-track {
+  background-color: var(--color-surface);
+}
+
+@media (min-width: 1024px) {
+  .scrollbarCustom::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+}
