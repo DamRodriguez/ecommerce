@@ -25,7 +25,7 @@ export default function CustomImage({
       quality={quality}
       priority={priority}
       loading={priority ? undefined : loading}
-      sizes={sizes ?? (fill ? "100vw" : undefined)}
+      sizes={sizes}
       placeholder={placeholder}
       className={clsx(
         fill && "object-cover bg-placeholder",

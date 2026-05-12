@@ -10,4 +10,6 @@
   --spacing-huge: 6rem;
   --spacing-margin-mobile: 1.25rem;
   --spacing-margin-desktop: 5rem;
+  --spacing-header-mobile: var(--height-header-mobile);
+  --spacing-header-desktop: var(--height-header-desktop);
 }

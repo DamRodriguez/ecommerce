@@ -34,7 +34,7 @@ export default function HomeHero() {
           alt="Hero Product"
           fill
           className="absolute inset-0 w-full h-full object-cover hover:scale-110 custom-transition-all"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA_3kySCAEBPwdO7TmeuysDwfpIntzoFrlNNnV_lvnmfXQiNH8XjeNf8dTGQVJd3nDiDax7FCpWmajCawO3iYJWopo__XFh-_eg588Ys4ud1nTVx7J9qxCiPLWY6NyDrcWSKW5IN6y6wYNdlsxahV_gwMxGG2emga9gHzxc920B8TTsz1QJxBYtbVJSiFF3ctfbqqMsUe7XVp3iTcq-03zDQnhFEPgUM8MCQLQ3EiDOL5rWJzaecfslEmvqZ3yJron039O-ytiYFlx"
+          src="/images/home/hero.png"
         />
       </div>
     </section>

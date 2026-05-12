@@ -23,11 +23,11 @@ const Hero = (props: HeroProps) => {
           <Image
             src={props.backgroundImage}
             alt={`Imagen de ${props.title}`}
-            sizes="100vw"
             fill
             quality={80}
             className="object-cover bg-placeholder"
             priority
+            sizes="(min-width: 1280px) 50vw, 100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-on-surface-strong/75 to-on-surface-strong/60" />
         </div>

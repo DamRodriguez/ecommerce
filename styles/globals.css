@@ -16,13 +16,6 @@
   z-index: 2;
 }
 
-@layer base {
-  :root {
-    --header-height-mobile: 4.5rem;
-    --header-height-desktop: 5.5rem;
-  }
-}
-
 @layer utilities {
   .custom-transition-all {
     transition-property: all;
@@ -34,27 +27,21 @@
     transition: none;
   }
 
-  .h-header {
-    min-height: var(--header-height-mobile);
-  }
-
   .min-h-screen-content {
-    min-height: calc(100svh - var(--header-height-mobile));
-  }
+    min-height: calc(100svh - var(--height-header-mobile));
 
-  @media (width >= 80rem) {
-    .h-header {
-      min-height: var(--header-height-desktop);
-    }
-
-    .min-h-screen-content {
-      min-height: calc(100svh - var(--header-height-desktop));
+    @media (width >= 80rem) {
+      min-height: calc(100svh - var(--height-header-desktop));
     }
   }
 }
 
 ::-webkit-scrollbar {
   width: 8px;
+
+  @media (max-width: 900px) {
+    width: 6px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -74,10 +61,4 @@
   --color-outline: #333333;
   --color-secondary-text: #a0a0a0;
   --color-shadow: #fff;
-}
-
-@media (max-width: 900px) {
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
 }

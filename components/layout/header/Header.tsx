@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-9999">
       <MotionSlide direction="up">
-        <SpaceX className="sticky z-9999 bg-surface-bright/85 backdrop-blur-[0.3rem] border-b border-b-on-surface/15 h-header flex items-center justify-between">
+        <SpaceX className="sticky z-9999 bg-surface-bright/85 backdrop-blur-[0.3rem] border-b border-b-on-surface/15 min-h-header-mobile xl:min-h-header-desktop flex items-center justify-between">
           <LeftItem
             onClick={() => {
               if (isMobileNavVisible) {
@@ -39,7 +39,7 @@ const Header = () => {
         }}
         position="top"
         closeButton={null}
-        className="pb-[7rem] bg-surface-bright mt-[var(--header-height-mobile)] xl:hidden"
+        className="pb-[7rem] bg-surface-bright mt-header-mobile xl:hidden"
       >
         <NavMobile
           onClose={() => {
