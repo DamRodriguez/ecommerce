@@ -8,13 +8,13 @@ const SocialButtons = () => {
     { href: config.urls.instagram, icon: <InstagramIcon /> },
   ];
   return (
-    <div className="flex flex-wrap justify-center gap-[1.5rem] [&_svg]:fill-surface [&_svg]:w-6 [&_svg]:h-6">
+    <div className="flex flex-wrap justify-center gap-[3rem] [&_svg]:fill-on-surface [&_svg]:w-7 [&_svg]:h-7">
       {socialItems.map((item, index) => (
         <Link
           key={index}
           href={item.href}
           target="_blank"
-          className="w-[4rem] h-[3rem] flex items-center justify-center bg-on-surface"
+          className="flex items-center justify-center"
         >
           {item.icon}
         </Link>

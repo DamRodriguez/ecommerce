@@ -13,9 +13,8 @@ const SpaceX = ({ children, className, id }: SectionProps) => {
       id={id}
       className={clsx(
         "px-[1rem] scroll-mt-[8.5rem] xl:scroll-mt-[14rem]",
-        "md:px-[6rem]",
-        "xl:px-[9rem]",
-        "4xl:px-[15rem]",
+        "md:px-[5rem]",
+        "xl:px-[7rem]",
         className,
       )}
     >

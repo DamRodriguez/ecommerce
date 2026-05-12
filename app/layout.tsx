@@ -33,6 +33,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="es"
+      data-scroll-behavior="smooth"
       className={clsx(
         "scroll-smooth font-base",
         fontBase.variable,
@@ -50,7 +51,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             <div className="min-w-[20rem] max-w-[120rem] mx-auto w-full bg-surface">
               <Header />
               <ToastContainer />
-              <div className="min-h-svh">{children}</div>
+              <div className="min-h-screen-content">{children}</div>
               <Footer />
             </div>
           </ProgressBarProvider>

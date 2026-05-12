@@ -25,7 +25,7 @@ const NavDesk = () => {
                 href={item.href}
                 onClick={(e) => handleSmoothScroll(e, item.href)}
                 className={clsx(
-                  "py-[0.5rem] text-base font-accent uppercase tracking-[0.1rem] group-hover:text-on-surface custom-transition-all",
+                  "py-[0.4rem] text-base font-accent uppercase tracking-[0.1rem] group-hover:text-on-surface custom-transition-all",
                   {
                     "text-on-surface": isActive,
                     "text-secondary-text": !isActive,
@@ -36,7 +36,7 @@ const NavDesk = () => {
               </Link>
               <span
                 className={clsx(
-                  "absolute bottom-0 left-0 w-full h-[3px] bg-on-surface custom-transition-all origin-left",
+                  "absolute bottom-0 left-0 w-full h-[2px] bg-on-surface custom-transition-all origin-left",
                   {
                     "scale-x-100": isActive,
                     "scale-x-0 group-hover:scale-x-100": !isActive,

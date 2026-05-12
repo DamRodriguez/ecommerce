@@ -15,8 +15,12 @@ const Footer = () => {
       href: routes.home,
     },
     {
-      text: "Ejemplo",
-      href: routes.ejemplo,
+      text: "Tienda",
+      href: routes.shop,
+    },
+    {
+      text: "Colecciones",
+      href: routes.collections,
     },
   ];
 
@@ -109,7 +113,7 @@ const Footer = () => {
           </ul>
         </MotionFade>
       </div>
-      <div className="border-t border-surface/15 py-5 bg-on-surface-strong">
+      <div className="border-t border-surface/15 py-5 bg-on-surface-strong/15">
         <div className="container mx-auto flex flex-col items-center justify-evenly gap-4 px-4 md:flex-row text-xs xl:text-sm text-surface">
           <MotionSlide>
             <p className="text-center">

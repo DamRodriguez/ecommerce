@@ -1,6 +1,7 @@
 export const routes = {
   home: "/",
-  ejemplo: "/ejemplo",
+  shop: "/tienda",
+  collections: "/colecciones",
   api: {
     contact: "/api/contact",
   },

@@ -12,7 +12,7 @@ const NavMobile = ({ onClose }: NavMobileProps) => {
   return (
     <SpaceX className="pt-[2rem] pb-[10rem] justify-between flex flex-col h-full">
       <nav>
-        <ul className="flex flex-col items-center text-center gap-[1rem]  ">
+        <ul className="flex flex-col items-center text-center gap-[1rem]">
           {routeItems.map(({ href, label }) => (
             <li
               key={href}
@@ -25,7 +25,7 @@ const NavMobile = ({ onClose }: NavMobileProps) => {
               >
                 {label}
               </Link>
-              <div className="h-[0.05rem] bg-secondary-text my-[0.5rem] group-hover:w-[50%] mx-auto w-full custom-transition-all" />
+              <div className="h-[0.02rem] bg-secondary-text my-[0.5rem] mx-auto w-full" />
             </li>
           ))}
         </ul>

@@ -8,7 +8,7 @@ export function ThemeToggle() {
   const { theme, resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  const iconClassName = "w-[1rem] h-[1rem] xl:w-[1.5rem] xl:h-[1.5rem]";
+  const iconClassName = "w-[1.4rem] h-[1.4rem] xl:w-[1.7rem] xl:h-[1.7rem]";
 
   useEffect(() => setMounted(true), []);
 
@@ -64,7 +64,7 @@ export function ThemeToggle() {
     <div className="container flex items-center justify-center">
       <label
         htmlFor="switch"
-        className="group relative grid w-[2.17375rem] xl:w-[2.67375rem] aspect-square cursor-pointer place-items-center bg-on-surface group"
+        className="group relative grid w-[2.5rem] xl:w-[3rem] aspect-square cursor-pointer place-items-center group"
       >
         <input
           type="checkbox"
@@ -77,7 +77,7 @@ export function ThemeToggle() {
         <div className="col-start-1 row-start-1 transition-all delay-150 peer-checked:rotate-[180deg] peer-checked:scale-0">
           <Moon
             className={clsx(
-              "stroke-surface group-hover:fill-surface fill-transparent custom-transition-all",
+              "stroke-on-surface group-hover:fill-on-surface fill-transparent custom-transition-all",
               iconClassName,
             )}
           />
@@ -86,7 +86,7 @@ export function ThemeToggle() {
         <div className="col-start-1 row-start-1 scale-0 transition-all peer-checked:delay-150 peer-checked:scale-100 peer-checked:rotate-[180deg]">
           <SunMedium
             className={clsx(
-              "stroke-surface group-hover:fill-surface fill-transparent custom-transition-all",
+              "stroke-on-surface group-hover:fill-on-surface fill-transparent custom-transition-all",
               iconClassName,
             )}
           />

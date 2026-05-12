@@ -1,3 +1,4 @@
+"use client";
 import MotionFade from "@/components/motion/MotionFade";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import Link from "next/link";

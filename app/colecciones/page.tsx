@@ -3,11 +3,11 @@ import { createMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = createMetadata({
-  title: "Pagina Ejemplo",
+  title: "Colecciones",
   description: "Descripción de ejemplo.",
-  path: routes.ejemplo,
+  path: routes.collections,
 });
 
-export default function EjemploPage() {
+export default function CollectionsPage() {
   return <></>;
 }
