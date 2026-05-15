@@ -71,8 +71,21 @@ const Button = ({
       form={form}
       aria-busy={isLoading}
     >
-      <span className="relative z-10 flex items-center justify-center gap-[0.5rem] xl:gap-[0.7rem]">
-        {isLoading ? <Spinner size={20} color={spinnerColor} /> : children}
+      <span className="relative z-10 flex items-center justify-center">
+        <span
+          className={clsx(
+            "flex items-center justify-center gap-[0.5rem] xl:gap-[0.7rem]",
+            isLoading && "opacity-0",
+          )}
+        >
+          {children}
+        </span>
+
+        {isLoading && (
+          <span className="absolute inset-0 flex items-center justify-center">
+            <Spinner size={20} color={spinnerColor} />
+          </span>
+        )}
       </span>
     </button>
   );

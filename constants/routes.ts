@@ -4,5 +4,6 @@ export const routes = {
   collections: "/colecciones",
   api: {
     contact: "/api/contact",
+    newsletter: "/api/newsletter",
   },
 };

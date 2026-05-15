@@ -7,7 +7,7 @@ type SpinnerProps = {
 
 const Spinner = ({
   size = 20,
-  color = "var(--color-secondary-text)",
+  color = "var(--color-surface)",
 }: SpinnerProps) => {
   return (
     <svg

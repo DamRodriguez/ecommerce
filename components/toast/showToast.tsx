@@ -20,7 +20,9 @@ const showToast = (
       position: options?.position ?? "top-left",
       autoClose: 3000,
       closeButton: false,
-      className: options?.className ?? "top-[5rem] xl:top-[6rem]",
+      className:
+        options?.className ??
+        "top-[var(--height-header-mobile)] lg:top-[var(--height-header-desktop)]",
     },
   );
 };

@@ -3,17 +3,17 @@ import { tv } from "tailwind-variants";
 export const buttonClass = tv({
   base: [
     "relative overflow-hidden custom-transition-all",
-    "text-sm xl:text-lg",
+    "text-sm xl:text-lg font-accent",
     "flex items-center justify-center",
-    "font-accent px-[1.5rem] xl:px-[2rem] py-[0.8rem] xl:py-[1rem]",
+    "px-[1.5rem] xl:px-[2rem] h-[3rem] xl:h-[4rem]",
 
     "before:absolute before:left-0 before:bottom-0 before:z-0 before:h-0 before:w-full",
-    "before:custom-transition-all before:duration-300 before:ease-in-out",
+    "before:custom-transition-all before:duration-400 before:ease-in-out",
     "hover:before:h-full",
 
     "after:absolute after:left-0 after:bottom-0 after:z-0 after:h-[2px] after:w-full",
     "after:origin-left after:scale-x-0",
-    "after:custom-transition-all after:duration-500 after:ease-out",
+    "after:custom-transition-all after:duration-400 after:ease-out",
     "hover:after:scale-x-100",
   ],
 
@@ -31,6 +31,11 @@ export const buttonClass = tv({
         "hover:text-surface",
         "before:bg-on-surface-strong",
         "after:bg-surface",
+      ],
+
+      tertiary: [
+        "bg-transparent text-on-surface border border-transparent !px-0",
+        "after:bg-on-surface",
       ],
     },
 
@@ -81,4 +86,4 @@ export const buttonClass = tv({
   },
 });
 
-export type ButtonVariants = "primary" | "secondary";
+export type ButtonVariants = "primary" | "secondary" | "tertiary";

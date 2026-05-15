@@ -1,8 +1,7 @@
 import CategoryCard from "@/components/common/categories/CategoryCard";
 import SpaceX from "@/components/layout/SpaceX";
-import HoverTextBounce from "@/components/motion/HoverTextBounce";
+import AnimatedTextButton from "@/components/ui/buttons/AnimatedTextButton";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 export default function CategoriesSection() {
   const categoryItems = [
@@ -37,25 +36,18 @@ export default function CategoriesSection() {
   ];
 
   return (
-    <SpaceX className="w-full p-margin-mobile md:p-margin-desktop bg-surface border-b border-outline">
+    <SpaceX className="py-vertical-mobile lg:py-vertical-desktop bg-surface border-b border-outline">
       <div className="flex justify-between items-center lg:items-end mb-xl border-b-4 border-outline pb-sm">
         <h2 className="text-2xl font-semibold leading-[1.4] text-on-surface uppercase">
           Categorías
         </h2>
-        <div className="flex items-center justify-center flex-col group relative cursor-pointer">
-          <div className="flex items-center gap-1">
-            <Link
-              className="font-accent text-xs font-medium tracking-[0.1em] uppercase text-on-surface"
-              href="#"
-            >
-              <HoverTextBounce text="ver todas" />
-            </Link>
-            <ArrowRight className="w-4 h-4 stroke-on-surface" />
-          </div>
-          <span className="absolute scale-x-0 group-hover:scale-x-100 bottom-0 left-0 w-full h-[1px] bg-on-surface custom-transition-all origin-left" />
-        </div>
+        <AnimatedTextButton
+          text="ver más"
+          href="#"
+          icon={<ArrowRight className="w-4 h-4 stroke-on-surface" />}
+        />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-lg">
         {categoryItems.map((item) => (
           <CategoryCard key={item.id} data={item} />
         ))}

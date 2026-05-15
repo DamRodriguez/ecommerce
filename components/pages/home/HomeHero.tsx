@@ -4,7 +4,7 @@ import LinkButton from "@/components/ui/buttons/LinkButton";
 
 export default function HomeHero() {
   return (
-    <section className="w-full gap-xl pt-xl lg:pt-0 border-b border-outline relative flex flex-col lg:flex-row min-h-screen-content justify-between">
+    <section className="w-full gap-xl pt-vertical-mobile lg:pt-0 border-b border-outline relative flex flex-col lg:flex-row min-h-screen-content justify-between">
       <SpaceX className="w-full lg:w-1/2 flex flex-col justify-center bg-surface">
         <h1 className="text-6xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.1] text-on-surface mb-md uppercase">
           Definiendo
@@ -31,10 +31,11 @@ export default function HomeHero() {
       </SpaceX>
       <div className="w-full lg:w-1/2 relative flex-1 overflow-hidden">
         <CustomImage
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA_3kySCAEBPwdO7TmeuysDwfpIntzoFrlNNnV_lvnmfXQiNH8XjeNf8dTGQVJd3nDiDax7FCpWmajCawO3iYJWopo__XFh-_eg588Ys4ud1nTVx7J9qxCiPLWY6NyDrcWSKW5IN6y6wYNdlsxahV_gwMxGG2emga9gHzxc920B8TTsz1QJxBYtbVJSiFF3ctfbqqMsUe7XVp3iTcq-03zDQnhFEPgUM8MCQLQ3EiDOL5rWJzaecfslEmvqZ3yJron039O-ytiYFlx"
           alt="Hero Product"
+          sizes="(max-width: 1024px) 100vw, 50vw"
           fill
           className="absolute inset-0 w-full h-full object-cover hover:scale-110 custom-transition-all"
-          src="/images/home/hero.png"
         />
       </div>
     </section>

@@ -11,7 +11,9 @@ const FormErrorMessage = ({ errorMessage, className }: FormErrorProps) => {
 
   return (
     errorMessage && (
-      <MotionOpacity className={clsx("text-red text-xs xl:text-sm", className)}>
+      <MotionOpacity
+        className={clsx("text-red text-xs xl:text-sm text-start", className)}
+      >
         {errorMessage}
       </MotionOpacity>
     )

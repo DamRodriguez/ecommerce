@@ -66,7 +66,7 @@ const ContactForm = () => {
 
       showToast("success", "Mensaje enviado con éxito!");
       methods.reset();
-    } catch (error) {
+    } catch {
       showToast("error", "Ha ocurrido un error, intente nuevamente");
     }
   };
@@ -113,7 +113,7 @@ const ContactForm = () => {
         </div>
 
         <Button full customUppercase type="submit" isLoading={isSubmitting}>
-          <p>{isSubmitting ? "Enviando..." : "Enviar Consulta"}</p>
+          <p>Enviar Consulta</p>
         </Button>
       </Form>
     </FormProvider>

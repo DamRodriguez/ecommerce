@@ -20,7 +20,7 @@ export default function InfoSection() {
     },
   ];
   return (
-    <SpaceX className="w-full p-margin-mobile md:p-margin-desktop bg-on-surface-strong text-surface">
+    <SpaceX className="py-vertical-mobile lg:py-vertical-desktop bg-on-surface-strong text-surface">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-xl items-center">
         <div className="w-full md:w-1/2">
           <span className="font-accent text-xs font-medium tracking-[0.1em] uppercase mb-md block">
@@ -41,7 +41,7 @@ export default function InfoSection() {
           {items.map((item, index) => (
             <div
               key={index}
-              className="border border-surface/70 p-lg flex flex-col items-center justify-center"
+              className="border bg-on-surface border-surface/70 p-lg flex flex-col items-center justify-center"
             >
               <span className="block text-2xl font-semibold leading-[1.4] mb-xs">
                 {item.title}
