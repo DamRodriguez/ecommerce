@@ -1,4 +1,6 @@
 import SpaceX from "@/components/layout/SpaceX";
+import MotionFade from "@/components/motion/MotionFade";
+import MotionStagger from "@/components/motion/MotionStagger";
 
 export default function InfoSection() {
   const items = [
@@ -22,7 +24,7 @@ export default function InfoSection() {
   return (
     <SpaceX className="py-vertical-mobile lg:py-vertical-desktop bg-on-surface-strong text-surface">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-xl items-center">
-        <div className="w-full md:w-1/2">
+        <MotionFade className="w-full md:w-1/2">
           <span className="font-accent text-xs font-medium tracking-[0.1em] uppercase mb-md block">
             MATERIALES Y FILOSOFÍA
           </span>
@@ -36,12 +38,12 @@ export default function InfoSection() {
             estructuradas y compuestos de carbono. La función dicta la forma,
             resultando en objetos de profunda permanencia y claridad absoluta.
           </p>
-        </div>
-        <div className="w-full md:w-1/2 grid grid-cols-2 gap-md text-center">
+        </MotionFade>
+        <MotionStagger className="w-full md:w-1/2 grid grid-cols-2 gap-md text-center">
           {items.map((item, index) => (
             <div
               key={index}
-              className="border bg-on-surface border-surface/70 p-lg flex flex-col items-center justify-center"
+              className="border bg-on-surface border-surface/70 p-lg flex flex-col items-center justify-center h-full min-h-[9rem] "
             >
               <span className="block text-2xl font-semibold leading-[1.4] mb-xs">
                 {item.title}
@@ -51,7 +53,7 @@ export default function InfoSection() {
               </span>
             </div>
           ))}
-        </div>
+        </MotionStagger>
       </div>
     </SpaceX>
   );

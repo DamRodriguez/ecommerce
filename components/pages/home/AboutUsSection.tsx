@@ -1,11 +1,12 @@
 import SpaceX from "@/components/layout/SpaceX";
+import MotionSlide from "@/components/motion/MotionSlide";
 import CustomImage from "@/components/other/CustomImage";
 import LinkButton from "@/components/ui/buttons/LinkButton";
 import { ArrowRight } from "lucide-react";
 
 export default function AboutUsSection() {
   return (
-    <section className="w-full bg-surface-bright border-b border-outline">
+    <MotionSlide className="w-full bg-surface-bright border-b border-outline">
       <div className="flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/2 min-h-[30rem] relative overflow-hidden">
           <CustomImage
@@ -43,6 +44,6 @@ export default function AboutUsSection() {
           </LinkButton>
         </SpaceX>
       </div>
-    </section>
+    </MotionSlide>
   );
 }

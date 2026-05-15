@@ -1,11 +1,15 @@
 import SpaceX from "@/components/layout/SpaceX";
+import MotionSlide from "@/components/motion/MotionSlide";
 import CustomImage from "@/components/other/CustomImage";
 import LinkButton from "@/components/ui/buttons/LinkButton";
 import { ArrowRight } from "lucide-react";
 
 export default function CollectionSection() {
   return (
-    <section className="w-full bg-surface-bright flex flex-col lg:flex-row border-b border-outline">
+    <MotionSlide
+      direction="right"
+      className="w-full bg-surface-bright flex flex-col lg:flex-row border-b border-outline"
+    >
       <SpaceX className="w-full lg:w-2/5 py-vertical-mobile lg:py-vertical-desktop flex flex-col justify-between">
         <div>
           <span className="font-accent text-xs font-medium tracking-[0.1em] uppercase text-on-surface mb-md block">
@@ -35,6 +39,6 @@ export default function CollectionSection() {
           className="absolute inset-0 w-full h-full object-cover hover:scale-110 custom-transition-all"
         />
       </div>
-    </section>
+    </MotionSlide>
   );
 }

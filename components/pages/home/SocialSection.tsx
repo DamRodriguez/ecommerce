@@ -1,4 +1,6 @@
 import SpaceX from "@/components/layout/SpaceX";
+import MotionSlide from "@/components/motion/MotionSlide";
+import MotionStagger from "@/components/motion/MotionStagger";
 import CustomImage from "@/components/other/CustomImage";
 import AnimatedTextButton from "@/components/ui/buttons/AnimatedTextButton";
 import { ExternalLink } from "lucide-react";
@@ -38,18 +40,23 @@ export default function SocialSection() {
 
   return (
     <section className="bg-surface">
-      <SpaceX className="py-margin-mobile lg:py-margin-desktop flex flex-col sm:flex-row justify-between items-start sm:items-end gap-md">
-        <div>
-          <h2 className="text-2xl font-semibold leading-[1.4] text-on-surface uppercase">
-            Redes
-          </h2>
-          <p className="text-base leading-[1.6] text-on-surface mt-sm">
-            @ARCHITECT_STUDIO
-          </p>
-        </div>
-        <AnimatedTextButton text="síguenos" href="#" />
-      </SpaceX>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
+      <MotionSlide direction="down">
+        <SpaceX className="py-margin-mobile lg:py-margin-desktop flex flex-col sm:flex-row justify-between items-start sm:items-end gap-md">
+          <div>
+            <h2 className="text-2xl font-semibold leading-[1.4] text-on-surface uppercase">
+              Redes
+            </h2>
+            <p className="text-base leading-[1.6] text-on-surface mt-sm">
+              @ARCHITECT_STUDIO
+            </p>
+          </div>
+          <AnimatedTextButton text="síguenos" href="#" />
+        </SpaceX>
+      </MotionSlide>
+      <MotionStagger
+        direction="down"
+        className="grid grid-cols-2 md:grid-cols-4 gap-1"
+      >
         {imageItems.map((item) => (
           <Link
             href={item.href}
@@ -67,7 +74,7 @@ export default function SocialSection() {
             </div>
           </Link>
         ))}
-      </div>
+      </MotionStagger>
     </section>
   );
 }

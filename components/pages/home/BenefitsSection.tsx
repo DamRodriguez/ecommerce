@@ -1,4 +1,5 @@
 import SpaceX from "@/components/layout/SpaceX";
+import MotionFade from "@/components/motion/MotionFade";
 import { Lock, MessageSquareReply, Truck } from "lucide-react";
 
 export default function BenefitsSection() {
@@ -26,7 +27,7 @@ export default function BenefitsSection() {
   return (
     <SpaceX className="w-full p-margin-mobile lg:p-margin-desktop bg-surface border-b border-outline grid grid-cols-1 md:grid-cols-3 gap-y-xl md:gap-y-0 divide-y md:divide-y-0 md:divide-x divide-outline">
       {items.map((item) => (
-        <div
+        <MotionFade
           key={item.id}
           className="pt-xl md:pt-0 pb-xl md:pb-0 md:px-lg flex flex-col items-start"
         >
@@ -39,7 +40,7 @@ export default function BenefitsSection() {
           <p className="text-base lg:text-lg leading-[1.6] text-secondary-text">
             {item.text}
           </p>
-        </div>
+        </MotionFade>
       ))}
     </SpaceX>
   );
