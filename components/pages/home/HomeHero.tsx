@@ -7,7 +7,7 @@ import LinkButton from "@/components/ui/buttons/LinkButton";
 
 export default function HomeHero() {
   return (
-    <section className="w-full gap-xl pt-vertical-mobile lg:pt-0 border-b border-outline relative flex flex-col lg:flex-row min-h-screen-content justify-between">
+    <section className="w-full gap-xl pt-margin-mobile lg:pt-0 border-b border-outline relative flex flex-col lg:flex-row min-h-screen-content justify-between">
       <SpaceX className="w-full lg:w-1/2 flex flex-col justify-center bg-surface">
         <MotionSlide order={0}>
           <h1 className="text-5xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.1] text-on-surface mb-md uppercase">
