@@ -20,7 +20,7 @@ export default function CollectionSection() {
             <br />
             Obsidiana
           </h2>
-          <p className="text-lg leading-[1.6] text-on-surface mb-xl">
+          <p className="text-base lg:text-lg leading-[1.6] text-on-surface mb-xl">
             Un estudio de densidad y sustracción de materiales. La nueva
             colección elimina lo superfluo para revelar el núcleo esencial de la
             utilidad moderna.

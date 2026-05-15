@@ -43,9 +43,9 @@ export default function SocialSection() {
       <MotionSlide direction="down">
         <SpaceX className="py-margin-mobile lg:py-margin-desktop flex flex-col sm:flex-row justify-between items-start sm:items-end gap-md">
           <div>
-            <h2 className="text-2xl font-semibold leading-[1.4] text-on-surface uppercase">
+            <h3 className="text-xl lg:text-2xl font-semibold leading-[1.4] text-on-surface uppercase">
               Redes
-            </h2>
+            </h3>
             <p className="text-base leading-[1.6] text-on-surface mt-sm">
               @ARCHITECT_STUDIO
             </p>

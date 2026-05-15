@@ -26,13 +26,13 @@ export default function AboutUsSection() {
             <br />
             Estética
           </h2>
-          <p className="text-lg leading-[1.6] text-on-surface mb-lg">
+          <p className="text-base lg:text-lg leading-[1.6] text-on-surface mb-lg">
             Fundado en los principios del brutalismo y el diseño industrial, el
             estudio ARCHITECT existe en la intersección de la belleza austera y
             la utilidad intransigente. No diseñamos para las masas; diseñamos
             para el individuo exigente.
           </p>
-          <p className="text-base leading-[1.6] text-secondary-text mb-xl">
+          <p className="text-base lg:text-lg leading-[1.6] text-secondary-text mb-xl">
             Cada prototipo es sometido a rigurosas pruebas de estrés, no solo
             por durabilidad física, sino por resistencia visual. Nuestro
             objetivo es crear objetos que sean inmunes a las tendencias,

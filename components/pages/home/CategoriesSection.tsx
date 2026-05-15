@@ -42,7 +42,7 @@ export default function CategoriesSection() {
     <SpaceX className="py-vertical-mobile lg:py-vertical-desktop bg-surface border-b border-outline">
       <div className="flex justify-between items-center lg:items-end mb-xl border-b-4 border-outline pb-sm">
         <MotionSlide>
-          <h2 className="text-2xl font-semibold leading-[1.4] text-on-surface uppercase">
+          <h2 className="text-2xl lg:text-3xl font-semibold leading-[1.4] text-on-surface uppercase">
             Categorías
           </h2>
         </MotionSlide>

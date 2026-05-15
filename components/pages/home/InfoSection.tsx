@@ -28,7 +28,7 @@ export default function InfoSection() {
           <span className="font-accent text-xs font-medium tracking-[0.1em] uppercase mb-md block">
             MATERIALES Y FILOSOFÍA
           </span>
-          <h2 className="text-3xl font-semibold tracking-[-0.01em] leading-[1.3] mb-lg uppercase">
+          <h2 className="text-2xl lg:text-3xl font-semibold tracking-[-0.01em] leading-[1.3] mb-lg uppercase">
             Radio Cero
           </h2>
           <p className="text-base leading-[1.6]">
@@ -45,7 +45,7 @@ export default function InfoSection() {
               key={index}
               className="border bg-on-surface border-surface/70 p-lg flex flex-col items-center justify-center h-full min-h-[9rem] "
             >
-              <span className="block text-2xl font-semibold leading-[1.4] mb-xs">
+              <span className="block text-xl lg:text-2xl font-semibold leading-[1.4] mb-xs">
                 {item.title}
               </span>
               <span className="font-accent text-xs font-medium tracking-[0.1em] uppercase">
