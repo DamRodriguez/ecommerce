@@ -10,14 +10,14 @@ export default function HomeHero() {
     <section className="w-full gap-xl pt-vertical-mobile lg:pt-0 border-b border-outline relative flex flex-col lg:flex-row min-h-screen-content justify-between">
       <SpaceX className="w-full lg:w-1/2 flex flex-col justify-center bg-surface">
         <MotionSlide order={0}>
-          <h1 className="text-6xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.1] text-on-surface mb-md uppercase">
+          <h1 className="text-5xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.1] text-on-surface mb-md uppercase">
             Definiendo
             <br />
             Precisión
           </h1>
         </MotionSlide>
         <MotionFade order={1}>
-          <p className="text-lg lg:text-xl leading-[1.6] text-on-surface mb-xl">
+          <p className="text-base lg:text-xl leading-[1.6] text-on-surface mb-xl">
             Estética diseñada para el profesional exigente. Descubra nuestra
             última colección de elementos esenciales meticulosamente elaborados.
           </p>
