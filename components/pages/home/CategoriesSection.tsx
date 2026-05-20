@@ -2,7 +2,6 @@ import CategoryCard from "@/components/common/categories/CategoryCard";
 import SpaceX from "@/components/layout/SpaceX";
 import MotionFade from "@/components/motion/MotionFade";
 import MotionSlide from "@/components/motion/MotionSlide";
-import MotionStagger from "@/components/motion/MotionStagger";
 import AnimatedTextButton from "@/components/ui/buttons/AnimatedTextButton";
 import { ArrowRight } from "lucide-react";
 
@@ -40,7 +39,7 @@ export default function CategoriesSection() {
 
   return (
     <SpaceX className="py-vertical-mobile lg:py-vertical-desktop bg-surface border-b border-outline">
-      <div className="flex justify-between items-center lg:items-end mb-xl border-b-4 border-outline pb-sm">
+      <div className="flex justify-between items-end lg:items-end mb-xl border-b-4 border-outline pb-sm">
         <MotionSlide>
           <h2 className="text-2xl lg:text-3xl font-semibold leading-[1.4] text-on-surface uppercase">
             Categorías
@@ -54,14 +53,13 @@ export default function CategoriesSection() {
           />
         </MotionFade>
       </div>
-      <MotionStagger
-        direction="down"
-        className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-lg"
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-lg">
         {categoryItems.map((item) => (
-          <CategoryCard key={item.id} data={item} />
+          <MotionSlide key={item.id} direction="down">
+            <CategoryCard data={item} />
+          </MotionSlide>
         ))}
-      </MotionStagger>
+      </div>
     </SpaceX>
   );
 }

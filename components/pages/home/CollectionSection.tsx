@@ -6,12 +6,9 @@ import { ArrowRight } from "lucide-react";
 
 export default function CollectionSection() {
   return (
-    <MotionSlide
-      direction="right"
-      className="w-full bg-surface-bright flex flex-col lg:flex-row border-b border-outline"
-    >
+    <div className="w-full bg-surface-bright flex flex-col lg:flex-row border-b border-outline">
       <SpaceX className="w-full lg:w-2/5 py-vertical-mobile lg:py-vertical-desktop flex flex-col justify-between">
-        <div>
+        <MotionSlide>
           <span className="font-accent text-xs font-medium tracking-[0.1em] uppercase text-on-surface mb-md block">
             EDITORIAL
           </span>
@@ -25,20 +22,23 @@ export default function CollectionSection() {
             colección elimina lo superfluo para revelar el núcleo esencial de la
             utilidad moderna.
           </p>
-        </div>
-        <LinkButton href="#" customUppercase variant="tertiary">
-          <p>Explorar Colección</p>
-          <ArrowRight />
-        </LinkButton>
+          <LinkButton href="#" customUppercase variant="tertiary">
+            <p>Explorar Colección</p>
+            <ArrowRight />
+          </LinkButton>
+        </MotionSlide>
       </SpaceX>
-      <div className="w-full lg:w-3/5 min-h-[20rem] relative overflow-hidden">
+      <MotionSlide
+        direction="right"
+        className="w-full lg:w-3/5 min-h-[20rem] relative overflow-hidden"
+      >
         <CustomImage
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT2Sb75R-XxU4T-y2RmhZlf1ImGu2FCaCZO4wAmLPdfBTyfUENWbFgyKUKALc2h2kVcekUTyzKXM3cFrXvpM5Hx1gbEKCaudxoUzmQ9hSdYsOl0n0sTJnS_uisD5YEv3SyBeSrS6eBU9l2cegq9tJN6xu4cgN9KxtA4ldgQi7pREPnTIdIKrUuBvRRxK2DZf_ptNUSNfKV6lriN_M6GgHh_GI3qp9vU4bNW9ngq_Uv6jtyo6YsHmnCtw_b6ZiobYS2hwixPIXopQ_5"
           alt="Editorial Image"
           fill
           className="absolute inset-0 w-full h-full object-cover hover:scale-110 custom-transition-all"
         />
-      </div>
-    </MotionSlide>
+      </MotionSlide>
+    </div>
   );
 }

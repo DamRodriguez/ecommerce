@@ -1,5 +1,5 @@
 "use client";
-import { MotionHeight } from "@/components/motion/MotionHeight";
+import MotionHeight from "@/components/motion/MotionHeight";
 import { inputClass } from "@/components/ui/inputs/input/Input.style";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import clsx from "clsx";

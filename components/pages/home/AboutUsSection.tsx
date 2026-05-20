@@ -6,18 +6,18 @@ import { ArrowRight } from "lucide-react";
 
 export default function AboutUsSection() {
   return (
-    <MotionSlide className="w-full bg-surface-bright border-b border-outline">
-      <div className="flex flex-col lg:flex-row">
-        <div className="w-full lg:w-1/2 min-h-[30rem] relative overflow-hidden">
-          <CustomImage
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUxjMymXPJva_rm9iUakb5V3q6d95i9iBCNMXbp08uYAlsQnTHapX4rXM8BUcWLkjwS3f1j9x_pz1mUtTQe-Zpi-nm8MFJh_X85vp0sOnOZO1i3zFzNjwl0IzeUHv92UGnaGbNj0yx8KUFxQNe0C98xoc8co8Y9Gy3wT-4Mxk_Ywo2K--o1nnyomJ45LbVaNpiCLySCQQVPuDPLbCeP7Q3G_tBgwG6ixQs-mwVgs4a4-WXELQ46uvW08LPGWa1cCPbOKjc22lJfe_y"
-            alt="Architectural Studio Space"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            fill
-            className="absolute inset-0 w-full h-full object-cover hover:scale-110 custom-transition-all"
-          />
-        </div>
-        <SpaceX className="w-full lg:w-1/2 py-vertical-mobile lg:py-vertical-desktop flex flex-col justify-center">
+    <div className="flex flex-col lg:flex-row w-full bg-surface-bright border-b border-outline">
+      <MotionSlide className="w-full lg:w-1/2 min-h-[30rem] relative overflow-hidden">
+        <CustomImage
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUxjMymXPJva_rm9iUakb5V3q6d95i9iBCNMXbp08uYAlsQnTHapX4rXM8BUcWLkjwS3f1j9x_pz1mUtTQe-Zpi-nm8MFJh_X85vp0sOnOZO1i3zFzNjwl0IzeUHv92UGnaGbNj0yx8KUFxQNe0C98xoc8co8Y9Gy3wT-4Mxk_Ywo2K--o1nnyomJ45LbVaNpiCLySCQQVPuDPLbCeP7Q3G_tBgwG6ixQs-mwVgs4a4-WXELQ46uvW08LPGWa1cCPbOKjc22lJfe_y"
+          alt="Architectural Studio Space"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          fill
+          className="absolute inset-0 w-full h-full object-cover hover:scale-110 custom-transition-all"
+        />
+      </MotionSlide>
+      <SpaceX className="w-full lg:w-1/2 py-vertical-mobile lg:py-vertical-desktop flex flex-col justify-center">
+        <MotionSlide direction="right">
           <span className="font-accent text-xs font-medium tracking-[0.1em] uppercase text-on-surface mb-md block">
             SOBRE EL ESTUDIO
           </span>
@@ -42,8 +42,8 @@ export default function AboutUsSection() {
             <p>Leer Manifiesto</p>
             <ArrowRight />
           </LinkButton>
-        </SpaceX>
-      </div>
-    </MotionSlide>
+        </MotionSlide>
+      </SpaceX>
+    </div>
   );
 }

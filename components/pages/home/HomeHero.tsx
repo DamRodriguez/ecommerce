@@ -1,7 +1,6 @@
 import SpaceX from "@/components/layout/SpaceX";
 import MotionFade from "@/components/motion/MotionFade";
 import MotionSlide from "@/components/motion/MotionSlide";
-import MotionStagger from "@/components/motion/MotionStagger";
 import CustomImage from "@/components/other/CustomImage";
 import LinkButton from "@/components/ui/buttons/LinkButton";
 
@@ -22,26 +21,27 @@ export default function HomeHero() {
             última colección de elementos esenciales meticulosamente elaborados.
           </p>
         </MotionFade>
-        <MotionStagger
-          order={2}
-          className="flex flex-col md:flex-row gap-md flex-wrap"
-        >
-          <LinkButton href="" customUppercase className="w-full md:w-fit">
-            <p>Comprar Ahora</p>
-          </LinkButton>
-          <LinkButton
-            href=""
-            customUppercase
-            outline
-            className="w-full md:w-fit"
-          >
-            <p>Destacados</p>
-          </LinkButton>
-        </MotionStagger>
+        <div className="flex flex-col md:flex-row gap-md flex-wrap">
+          <MotionSlide order={2}>
+            <LinkButton href="" customUppercase className="w-full md:w-fit">
+              <p>Comprar Ahora</p>
+            </LinkButton>
+          </MotionSlide>
+          <MotionSlide order={2} direction="right">
+            <LinkButton
+              href=""
+              customUppercase
+              outline
+              className="w-full md:w-fit"
+            >
+              <p>Destacados</p>
+            </LinkButton>
+          </MotionSlide>
+        </div>
       </SpaceX>
       <MotionSlide
         direction="right"
-        className="w-full lg:w-1/2 relative flex-1 overflow-hidden"
+        className="w-full flex-1 lg:w-1/2 relative overflow-hidden"
       >
         <CustomImage
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA_3kySCAEBPwdO7TmeuysDwfpIntzoFrlNNnV_lvnmfXQiNH8XjeNf8dTGQVJd3nDiDax7FCpWmajCawO3iYJWopo__XFh-_eg588Ys4ud1nTVx7J9qxCiPLWY6NyDrcWSKW5IN6y6wYNdlsxahV_gwMxGG2emga9gHzxc920B8TTsz1QJxBYtbVJSiFF3ctfbqqMsUe7XVp3iTcq-03zDQnhFEPgUM8MCQLQ3EiDOL5rWJzaecfslEmvqZ3yJron039O-ytiYFlx"

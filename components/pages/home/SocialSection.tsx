@@ -1,5 +1,5 @@
 import SpaceX from "@/components/layout/SpaceX";
-import MotionSlide from "@/components/motion/MotionSlide";
+import MotionFade from "@/components/motion/MotionFade";
 import MotionStagger from "@/components/motion/MotionStagger";
 import CustomImage from "@/components/other/CustomImage";
 import AnimatedTextButton from "@/components/ui/buttons/AnimatedTextButton";
@@ -40,7 +40,7 @@ export default function SocialSection() {
 
   return (
     <section className="bg-surface">
-      <MotionSlide direction="down">
+      <MotionFade>
         <SpaceX className="py-margin-mobile lg:py-margin-desktop flex flex-col sm:flex-row justify-between items-start sm:items-end gap-md">
           <div>
             <h3 className="text-xl lg:text-2xl font-semibold leading-[1.4] text-on-surface uppercase">
@@ -52,7 +52,7 @@ export default function SocialSection() {
           </div>
           <AnimatedTextButton text="síguenos" href="#" />
         </SpaceX>
-      </MotionSlide>
+      </MotionFade>
       <MotionStagger
         direction="down"
         className="grid grid-cols-2 md:grid-cols-4 gap-1"

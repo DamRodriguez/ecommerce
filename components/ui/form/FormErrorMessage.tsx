@@ -1,4 +1,4 @@
-import { MotionOpacity } from "@/components/motion/MotionOpacity";
+import MotionOpacity from "@/components/motion/MotionOpacity";
 import clsx from "clsx";
 
 type FormErrorProps = {
