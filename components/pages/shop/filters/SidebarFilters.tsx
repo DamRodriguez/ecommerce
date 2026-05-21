@@ -9,6 +9,7 @@ import {
 import Button from "@/components/ui/buttons/Button";
 import { InputCheckbox } from "@/components/ui/inputs/InputCheckbox";
 import { InputText } from "@/components/ui/inputs/InputText";
+import { useScrollLock } from "@/hooks/useScrollLock";
 import clsx from "clsx";
 import { Search, SlidersHorizontal, X } from "lucide-react";
 import { Dispatch, useEffect, useState } from "react";
@@ -43,6 +44,7 @@ export default function SidebarFilters({
   dispatch,
 }: SidebarFiltersProps) {
   const [isOpen, setIsOpen] = useState(false);
+  useScrollLock(isOpen);
 
   const allProductsSelected = filters.categories.length === 0;
 
