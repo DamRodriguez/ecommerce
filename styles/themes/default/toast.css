@@ -51,3 +51,10 @@
 .Toastify__toast--warning .Toastify__toast-icon {
   color: var(--color-orange) !important;
 }
+
+@media (max-width: 480px) {
+  .Toastify__toast-container {
+    padding: 0.5rem !important;
+    gap: 0.5rem !important;
+  }
+}

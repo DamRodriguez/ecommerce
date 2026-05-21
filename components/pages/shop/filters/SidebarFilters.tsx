@@ -217,7 +217,7 @@ export default function SidebarFilters({
 
         <aside
           className={clsx(
-            "absolute bottom-0 left-0 w-full overflow-y-auto max-h-[calc(100dvh-var(--height-header-mobile))] bg-surface-bright border-t border-outline p-md custom-transition-all",
+            "absolute bottom-0 left-0 w-full overflow-y-auto max-h-[calc(100svh-var(--height-header-mobile))] bg-surface-bright border-t border-outline p-md custom-transition-all",
             isOpen ? "translate-y-0" : "translate-y-full",
           )}
         >
