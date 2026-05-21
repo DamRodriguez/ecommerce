@@ -1,5 +1,4 @@
 "use client";
-
 import MotionSlide from "@/components/motion/MotionSlide";
 import {
   ShopFiltersAction,
@@ -12,7 +11,7 @@ import { InputText } from "@/components/ui/inputs/InputText";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import clsx from "clsx";
 import { Search, SlidersHorizontal, X } from "lucide-react";
-import { Dispatch, useEffect, useState } from "react";
+import { Dispatch, useState } from "react";
 
 type SidebarFiltersProps = {
   categories: string[];
@@ -47,16 +46,6 @@ export default function SidebarFilters({
   useScrollLock(isOpen);
 
   const allProductsSelected = filters.categories.length === 0;
-
-  useEffect(() => {
-    if (!isOpen) return;
-
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
 
   const closeFilters = () => {
     setIsOpen(false);
@@ -191,14 +180,14 @@ export default function SidebarFilters({
         </Button>
       </MotionSlide>
 
-      {/* Desktop sidebar */}
+      {/* Desktop */}
       <MotionSlide direction="down" order={1} className="xl:mt-xl">
         <aside className="hidden xl:flex w-full md:w-64 flex-shrink-0 h-fit flex-col gap-xl top-[calc(var(--height-header-desktop)+2rem)] sticky">
           {filtersContent}
         </aside>
       </MotionSlide>
 
-      {/* Mobile drawer */}
+      {/* Mobile */}
       <div
         className={clsx(
           "fixed inset-0 z-50 xl:hidden custom-transition-all",

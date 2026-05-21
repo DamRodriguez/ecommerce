@@ -19,7 +19,7 @@ const Header = () => {
         direction="up"
         className="z-9999 fixed top-0 w-full min-w-[20rem] max-w-[120rem]"
       >
-        <SpaceX className="bg-surface-bright/85 backdrop-blur-[0.3rem] border-b border-b-on-surface/15 min-h-header-mobile xl:min-h-header-desktop flex items-center justify-between">
+        <SpaceX className="bg-surface-bright/90 backdrop-blur-[0.5rem] border-b border-b-on-surface/15 min-h-header-mobile xl:min-h-header-desktop flex items-center justify-between">
           <LeftItem
             onClick={() => {
               if (isMobileNavVisible) {

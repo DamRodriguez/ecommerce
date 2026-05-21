@@ -1,4 +1,5 @@
 import MotionFade from "@/components/motion/MotionFade";
+import MotionOpacity from "@/components/motion/MotionOpacity";
 import MotionSlide from "@/components/motion/MotionSlide";
 import MotionStretch from "@/components/motion/MotionStretch";
 import ProductCard, {
@@ -47,13 +48,14 @@ export default function ProductsSection({
           ))}
         </div>
       ) : (
-        <div className="border border-outline bg-surface-bright p-xl">
-          <p className="text-on-surface text-xl">No se encontraron productos</p>
-
-          <p className="text-on-surface mt-xs">
+        <MotionOpacity className="border border-outline bg-surface-bright p-xl">
+          <p className="text-on-surface text-lg xl:text-xl">
+            No se encontraron productos
+          </p>
+          <p className="text-on-surface mt-xs text-base">
             Probá cambiar la búsqueda o limpiar los filtros
           </p>
-        </div>
+        </MotionOpacity>
       )}
     </section>
   );

@@ -29,9 +29,10 @@ export default function HomeHero() {
           </MotionSlide>
           <MotionSlide order={1} direction="right">
             <LinkButton
+              variant="secondary"
               href=""
               customUppercase
-              outline
+              border
               className="w-full md:w-fit"
             >
               <p>Destacados</p>
