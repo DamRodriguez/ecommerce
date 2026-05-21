@@ -14,9 +14,12 @@ const Header = () => {
   useCloseMobileNavOnDesktop({ setIsMobileNavVisible });
 
   return (
-    <header className="sticky top-0 z-9999">
-      <MotionSlide direction="up">
-        <SpaceX className="sticky z-9999 bg-surface-bright/85 backdrop-blur-[0.3rem] border-b border-b-on-surface/15 min-h-header-mobile xl:min-h-header-desktop flex items-center justify-between">
+    <header>
+      <MotionSlide
+        direction="up"
+        className="z-9999 fixed top-0 w-full min-w-[20rem] max-w-[120rem]"
+      >
+        <SpaceX className="bg-surface-bright/85 backdrop-blur-[0.3rem] border-b border-b-on-surface/15 min-h-header-mobile xl:min-h-header-desktop flex items-center justify-between">
           <LeftItem
             onClick={() => {
               if (isMobileNavVisible) {

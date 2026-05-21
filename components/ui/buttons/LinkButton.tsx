@@ -19,6 +19,7 @@ type LinkButtonProps = {
   cursorNormal?: boolean;
   external?: boolean;
   customUppercase?: boolean;
+  border?: boolean;
 };
 
 const LinkButton = ({
@@ -32,6 +33,7 @@ const LinkButton = ({
   cursorNormal = false,
   external = false,
   customUppercase,
+  border = false,
 }: LinkButtonProps) => {
   const cleanQuery = query
     ? Object.fromEntries(
@@ -48,6 +50,7 @@ const LinkButton = ({
       full,
       cursorNormal,
       customUppercase,
+      border,
     }),
     className,
   );

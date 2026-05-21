@@ -1,4 +1,7 @@
+import SpaceX from "@/components/layout/SpaceX";
+import ShopClientPage from "@/components/pages/shop/ShopClientPage";
 import { routes } from "@/constants/routes";
+import products from "@/data/products.json";
 import { createMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 
@@ -9,5 +12,9 @@ export const metadata: Metadata = createMetadata({
 });
 
 export default function ShopPage() {
-  return <></>;
+  return (
+    <SpaceX className="py-margin-mobile lg:py-margin-desktop">
+      <ShopClientPage data={products} />
+    </SpaceX>
+  );
 }

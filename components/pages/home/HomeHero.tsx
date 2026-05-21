@@ -22,12 +22,12 @@ export default function HomeHero() {
           </p>
         </MotionFade>
         <div className="flex flex-col md:flex-row gap-md flex-wrap">
-          <MotionSlide order={2}>
+          <MotionSlide order={1}>
             <LinkButton href="" customUppercase className="w-full md:w-fit">
               <p>Comprar Ahora</p>
             </LinkButton>
           </MotionSlide>
-          <MotionSlide order={2} direction="right">
+          <MotionSlide order={1} direction="right">
             <LinkButton
               href=""
               customUppercase

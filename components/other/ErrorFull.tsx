@@ -19,7 +19,7 @@ const ErrorFull = ({
   return (
     <Container
       className={clsx(
-        "min-h-dvh flex flex-col gap-4 xl:gap-6 items-center justify-center",
+        "flex flex-col gap-4 xl:gap-6 items-center justify-center absolute inset-0 min-h-dvh",
         containerClassName,
       )}
     >

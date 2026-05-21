@@ -14,6 +14,7 @@ export type InputCheckboxProps = {
   disabled?: boolean;
   ref?: RefCallBack;
   error?: boolean;
+  withHookForm?: boolean;
 };
 
 export const InputCheckbox = ({
@@ -28,6 +29,7 @@ export const InputCheckbox = ({
   disabled,
   error,
   className,
+  withHookForm = false,
 }: InputCheckboxProps) => {
   return (
     <div className="relative">
@@ -43,8 +45,11 @@ export const InputCheckbox = ({
         onFocus={onFocus}
         error={error}
         className={clsx(
-          "cursor-pointer accent-on-surface !w-[1rem] xl:!w-[1.5rem] !shadow-none absolute bottom-0 left-0",
+          "cursor-pointer accent-on-surface !w-[1rem] xl:!w-[1.2rem]",
           className,
+          {
+            "absolute bottom-0 left-0": withHookForm,
+          },
         )}
       />
     </div>

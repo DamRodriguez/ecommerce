@@ -1,11 +1,16 @@
+"use client";
 import CategoryCard from "@/components/common/categories/CategoryCard";
 import SpaceX from "@/components/layout/SpaceX";
 import MotionFade from "@/components/motion/MotionFade";
 import MotionSlide from "@/components/motion/MotionSlide";
 import AnimatedTextButton from "@/components/ui/buttons/AnimatedTextButton";
+import config from "@/config/config";
+import useBreakpoint from "@/hooks/useBreakpoint";
 import { ArrowRight } from "lucide-react";
 
 export default function CategoriesSection() {
+  const isTablet = useBreakpoint(config.breakpoints.xl);
+
   const categoryItems = [
     {
       id: "1",
@@ -54,8 +59,12 @@ export default function CategoriesSection() {
         </MotionFade>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-lg">
-        {categoryItems.map((item) => (
-          <MotionSlide key={item.id} direction="down">
+        {categoryItems.map((item, index) => (
+          <MotionSlide
+            key={item.id}
+            order={isTablet ? 0 : index * 0.4}
+            direction="down"
+          >
             <CategoryCard data={item} />
           </MotionSlide>
         ))}

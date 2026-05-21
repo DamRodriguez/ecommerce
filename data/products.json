@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "Module Chair 01",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuClxAC0i1Mt7LifQdgOEfksi7ZzWUZJp5FYEWeL_iIzpu7amh4ewQqcs9wQwpbgeYx-sXPYwIqSqOU52-9Cvqo6P9PVEH5zE5JD6lrt70Y2ufshGBqeXn0qmF0QRe56gWrjcTHlrOmjZcT4Bi3r9M-qH2qMF_mdc3YzvZWqAeTXvG_lwJt_db5lipGGCGcu8qVe0-fnyRMOJVTanDGeSaGm239NgjKzI7hkrxGOumbyewHcE6tJhrxOZzti4dRiaa4JPwlJymg_KXBg",
+    "price": 1250,
+    "category": "Mobiliario",
+    "subcategory": "Asientos",
+    "isNew": true
+  },
+  {
+    "id": "2",
+    "name": "Linear Table 02",
+    "image": "https://lh3.googleusercontent.com/geougc/AF1QipPBK_sk47zgkXUtM4HGuvAfIubVToMMyrHp7mFF=w718-no",
+    "price": 1890,
+    "category": "Mobiliario",
+    "subcategory": "Mesas",
+    "isNew": false
+  },
+  {
+    "id": "3",
+    "name": "Arc Floor Lamp",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCA_3kySCAEBPwdO7TmeuysDwfpIntzoFrlNNnV_lvnmfXQiNH8XjeNf8dTGQVJd3nDiDax7FCpWmajCawO3iYJWopo__XFh-_eg588Ys4ud1nTVx7J9qxCiPLWY6NyDrcWSKW5IN6y6wYNdlsxahV_gwMxGG2emga9gHzxc920B8TTsz1QJxBYtbVJSiFF3ctfbqqMsUe7XVp3iTcq-03zDQnhFEPgUM8MCQLQ3EiDOL5rWJzaecfslEmvqZ3yJron039O-ytiYFlx",
+    "price": 640,
+    "category": "Iluminación",
+    "subcategory": "Lámparas",
+    "isNew": true
+  },
+  {
+    "id": "4",
+    "name": "Stone Side Table",
+    "image": "https://lh3.googleusercontent.com/geougc/AF1QipPBK_sk47zgkXUtM4HGuvAfIubVToMMyrHp7mFF=w718-no",
+    "price": 780,
+    "category": "Mobiliario",
+    "subcategory": "Mesas auxiliares",
+    "isNew": false
+  },
+  {
+    "id": "5",
+    "name": "Nero Lounge Chair",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuClxAC0i1Mt7LifQdgOEfksi7ZzWUZJp5FYEWeL_iIzpu7amh4ewQqcs9wQwpbgeYx-sXPYwIqSqOU52-9Cvqo6P9PVEH5zE5JD6lrt70Y2ufshGBqeXn0qmF0QRe56gWrjcTHlrOmjZcT4Bi3r9M-qH2qMF_mdc3YzvZWqAeTXvG_lwJt_db5lipGGCGcu8qVe0-fnyRMOJVTanDGeSaGm239NgjKzI7hkrxGOumbyewHcE6tJhrxOZzti4dRiaa4JPwlJymg_KXBg",
+    "price": 1420,
+    "category": "Mobiliario",
+    "subcategory": "Sillones",
+    "isNew": true
+  },
+  {
+    "id": "6",
+    "name": "Soft Linen Sofa",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCA_3kySCAEBPwdO7TmeuysDwfpIntzoFrlNNnV_lvnmfXQiNH8XjeNf8dTGQVJd3nDiDax7FCpWmajCawO3iYJWopo__XFh-_eg588Ys4ud1nTVx7J9qxCiPLWY6NyDrcWSKW5IN6y6wYNdlsxahV_gwMxGG2emga9gHzxc920B8TTsz1QJxBYtbVJSiFF3ctfbqqMsUe7XVp3iTcq-03zDQnhFEPgUM8MCQLQ3EiDOL5rWJzaecfslEmvqZ3yJron039O-ytiYFlx",
+    "price": 2350,
+    "category": "Mobiliario",
+    "subcategory": "Sofás",
+    "isNew": false
+  },
+  {
+    "id": "7",
+    "name": "Minimal Wall Shelf",
+    "image": "https://lh3.googleusercontent.com/geougc/AF1QipPBK_sk47zgkXUtM4HGuvAfIubVToMMyrHp7mFF=w718-no",
+    "price": 390,
+    "category": "Decoración",
+    "subcategory": "Estanterías",
+    "isNew": false
+  },
+  {
+    "id": "8",
+    "name": "Ceramic Vase 03",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCA_3kySCAEBPwdO7TmeuysDwfpIntzoFrlNNnV_lvnmfXQiNH8XjeNf8dTGQVJd3nDiDax7FCpWmajCawO3iYJWopo__XFh-_eg588Ys4ud1nTVx7J9qxCiPLWY6NyDrcWSKW5IN6y6wYNdlsxahV_gwMxGG2emga9gHzxc920B8TTsz1QJxBYtbVJSiFF3ctfbqqMsUe7XVp3iTcq-03zDQnhFEPgUM8MCQLQ3EiDOL5rWJzaecfslEmvqZ3yJron039O-ytiYFlx",
+    "price": 160,
+    "category": "Decoración",
+    "subcategory": "Objetos",
+    "isNew": true
+  }
+]

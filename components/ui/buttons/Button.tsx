@@ -23,6 +23,7 @@ type ButtonProps = {
   form?: string;
   cursorNormal?: boolean;
   customUppercase?: boolean;
+  border?: boolean;
 };
 
 const Button = ({
@@ -39,6 +40,7 @@ const Button = ({
   form,
   cursorNormal = false,
   customUppercase,
+  border = false,
 }: ButtonProps) => {
   const isDisabled = disabled || isLoading;
 
@@ -50,6 +52,7 @@ const Button = ({
       full,
       cursorNormal,
       customUppercase,
+      border,
     }),
     className,
   );

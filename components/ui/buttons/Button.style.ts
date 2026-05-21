@@ -63,6 +63,11 @@ export const buttonClass = tv({
       false: "cursor-pointer",
       true: "cursor-default",
     },
+
+    border: {
+      false: null,
+      true: "border",
+    },
   },
 
   compoundVariants: [
@@ -77,6 +82,16 @@ export const buttonClass = tv({
       outline: true,
       class:
         "border-surface-bright before:bg-surface-bright text-surface hover:text-on-surface after:bg-on-surface",
+    },
+    {
+      intent: "primary",
+      border: true,
+      class: "border-surface-bright",
+    },
+    {
+      intent: "secondary",
+      border: true,
+      class: "border-on-surface-strong",
     },
   ],
 
