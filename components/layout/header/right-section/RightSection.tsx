@@ -1,5 +1,7 @@
+"use client";
 import HeaderCartButton from "@/components/layout/header/right-section/HeaderCartButton";
 import { ThemeToggle } from "@/components/ui/buttons/ThemeToggle";
+import useCart from "@/redux/cart/useCart";
 import clsx from "clsx";
 
 type RightSectionProps = {
@@ -10,6 +12,7 @@ type RightSectionProps = {
 };
 
 const RightSection = (props: RightSectionProps) => {
+  const { totalItems } = useCart();
   const handleToggleMobileNav = () => {
     props.setIsMobileNavVisible((prev) => !prev);
   };
@@ -21,7 +24,13 @@ const RightSection = (props: RightSectionProps) => {
   return (
     <div className="flex items-center gap-[1rem] md:gap-[1.5rem] xl:gap-[2rem]">
       <ThemeToggle />
-      <HeaderCartButton onClick={handleToggleCart} />
+      <div
+        className={clsx("custom-transition-all", {
+          "mr-[0.7rem] md:mr-[1.2rem] xl:mr-[1.7rem]": totalItems > 0,
+        })}
+      >
+        <HeaderCartButton onClick={handleToggleCart} />
+      </div>
 
       <div className="flex xl:hidden">
         <button

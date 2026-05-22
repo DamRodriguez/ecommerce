@@ -1,15 +1,20 @@
 .Toastify__toast {
   padding: 0 !important;
   padding-left: 1rem !important;
-  width: 22rem !important;
+  width: 25rem !important;
   background-color: var(--color-surface-bright) !important;
-  border: 1px solid var(--color-on-surface-strong) !important;
+  border: 1px solid var(--color-outline) !important;
   border-radius: 0px !important;
   overflow: hidden !important;
 
   @media (max-width: 1023px) {
     width: 17rem;
+    padding: 1rem !important;
   }
+}
+
+.Toastify__toast-container {
+  pointer-events: none !important;
 }
 
 .Toastify__toast-icon svg {

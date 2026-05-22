@@ -20,7 +20,7 @@ export default function HeaderCartButton({ onClick }: HeaderCartButtonProps) {
       </button>
 
       {totalItems > 0 && (
-        <span className="absolute -bottom-3 -right-3 flex h-[1.4rem] w-[1.4rem] items-center justify-center rounded-full bg-on-surface text-xs text-surface-bright shadow-s6 pointer-events-none">
+        <span className="absolute -bottom-3 -right-3 flex h-[1.4rem] w-[1.4rem] items-center justify-center rounded-full bg-on-surface text-xs text-surface-bright shadow-s6 pointer-events-none font-semibold">
           {totalItems}
         </span>
       )}

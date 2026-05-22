@@ -1,4 +1,5 @@
 import { ProductCardData } from "@/components/pages/shop/ProductCard";
+import showToast from "@/components/toast/showToast";
 import { useEffect, useMemo, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import {
@@ -67,19 +68,44 @@ const useCart = () => {
   const isCartEmpty = cartItems.length === 0;
 
   const addToCart = (product: ProductCardData) => {
+    const productAlreadyInCart = isInCart(product.id);
+
+    const toastMessage = productAlreadyInCart
+      ? `Unidad de ${product.name} añadida al carrito.`
+      : `${product.name} ha sido añadido al carrito.`;
+
     dispatch(addToCartAction(product));
+    showToast("success", toastMessage);
   };
 
   const removeOneFromCart = (productId: string) => {
+    const quantity = getItemQuantity(productId);
+    const product = getCartItem(productId);
+    if (!product) return;
+
     dispatch(removeOneFromCartAction(productId));
+
+    if (quantity <= 1) {
+      showToast("info", `${product.name} ha sido eliminado del carrito.`);
+      return;
+    }
+
+    showToast("info", `Unidad de ${product.name} eliminada del carrito.`);
   };
 
   const removeFromCart = (productId: string) => {
+    const product = getCartItem(productId);
+    if (!product) return;
+
     dispatch(removeFromCartAction(productId));
+    showToast("info", `${product.name} ha sido eliminado del carrito.`);
   };
 
   const clearCart = () => {
+    if (isCartEmpty) return;
+
     dispatch(clearCartAction());
+    showToast("info", "Carrito vaciado.");
   };
 
   const setItemQuantity = (productId: string, quantity: number) => {
