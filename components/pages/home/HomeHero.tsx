@@ -3,6 +3,7 @@ import MotionFade from "@/components/motion/MotionFade";
 import MotionSlide from "@/components/motion/MotionSlide";
 import CustomImage from "@/components/other/CustomImage";
 import LinkButton from "@/components/ui/buttons/LinkButton";
+import { routes } from "@/constants/routes";
 
 export default function HomeHero() {
   return (
@@ -23,7 +24,11 @@ export default function HomeHero() {
         </MotionFade>
         <div className="flex flex-col md:flex-row gap-md flex-wrap">
           <MotionSlide order={1}>
-            <LinkButton href="" customUppercase className="w-full md:w-fit">
+            <LinkButton
+              href={routes.shop}
+              customUppercase
+              className="w-full md:w-fit"
+            >
               <p>Comprar Ahora</p>
             </LinkButton>
           </MotionSlide>

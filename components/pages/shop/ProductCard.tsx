@@ -1,6 +1,6 @@
 "use client";
 import CustomImage from "@/components/other/CustomImage";
-import Button from "@/components/ui/buttons/Button";
+import CartButton from "@/components/ui/buttons/cart/CartButton";
 import { formatMoney } from "@/utils/formatMoney";
 
 export type ProductCardData = {
@@ -26,7 +26,7 @@ export default function ProductCard({ data }: ProductCardProps) {
         </div>
       )}
 
-      <div className="aspect-square bg-surface-container w-full overflow-hidden relative border-b border-outline">
+      <div className="aspect-square w-full overflow-hidden relative">
         <CustomImage
           src={data.image}
           alt={data.name}
@@ -37,13 +37,11 @@ export default function ProductCard({ data }: ProductCardProps) {
         <div className="absolute inset-0 group-hover:bg-black/15 custom-transition-all"></div>
 
         <div className="absolute bottom-0 w-full left-0 2xl:translate-y-full group-hover:translate-y-0 custom-transition-all">
-          <Button className="w-full border border-t-black">
-            <p>AÑADIR AL CARRITO</p>
-          </Button>
+          <CartButton product={data} />
         </div>
       </div>
 
-      <div className="p-md flex flex-col flex-grow justify-between">
+      <div className="p-md flex flex-col flex-grow justify-between border-t border-t-outline">
         <div>
           <p className="text-2xl text-on-surface truncate">{data.name}</p>
 

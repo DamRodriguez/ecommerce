@@ -1,6 +1,6 @@
 "use client";
 import { InstagramIcon, WhatsAppIcon } from "@/components/icons/social";
-import Column, { ColumnItems } from "@/components/layout/Footer/Column";
+import Column, { ColumnItems } from "@/components/layout/footer/Column";
 import MotionFade from "@/components/motion/MotionFade";
 import MotionSlide from "@/components/motion/MotionSlide";
 import config from "@/config/config";

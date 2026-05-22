@@ -200,7 +200,7 @@ export default function SidebarFilters({
           type="button"
           aria-label="Cerrar filtros"
           className={clsx(
-            "absolute inset-0 bg-black/50 backdrop-blur-[0.3rem] custom-transition-all top-header-mobile",
+            "absolute inset-0 bg-black/65 custom-transition-all top-header-mobile",
             isOpen ? "opacity-100" : "opacity-0",
           )}
           onClick={closeFilters}

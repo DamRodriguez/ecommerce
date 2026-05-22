@@ -1,6 +1,7 @@
-import Footer from "@/components/layout/Footer/Footer";
+import Footer from "@/components/layout/footer/Footer";
 import Header from "@/components/layout/header/Header";
 import ProgressBarProvider from "@/components/layout/ProgressBarProvider";
+import ReduxProvider from "@/components/layout/provider/ReduxProvider";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import ThemeProvider from "@/components/theme/ThemeProvider";
 import ThemeScript from "@/components/theme/ThemeScript";
@@ -45,17 +46,19 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <ThemeScript />
       </head>
       <body className="antialiased flex flex-col">
-        <ScrollToTop />
-        <ThemeProvider>
-          <ProgressBarProvider>
-            <div className="min-w-[20rem] max-w-[120rem] pt-header-mobile xl:pt-header-desktop mx-auto w-full bg-surface overflow-clip">
-              <Header />
-              <ToastContainer />
-              <div className="min-h-screen-content">{children}</div>
-              <Footer />
-            </div>
-          </ProgressBarProvider>
-        </ThemeProvider>
+        <ReduxProvider>
+          <ScrollToTop />
+          <ThemeProvider>
+            <ProgressBarProvider>
+              <div className="min-w-[20rem] max-w-[120rem] pt-header-mobile xl:pt-header-desktop mx-auto w-full bg-surface overflow-clip">
+                <Header />
+                <ToastContainer />
+                <div className="min-h-screen-content">{children}</div>
+                <Footer />
+              </div>
+            </ProgressBarProvider>
+          </ThemeProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

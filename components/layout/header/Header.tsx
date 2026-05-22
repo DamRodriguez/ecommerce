@@ -1,16 +1,18 @@
 "use client";
+import CartSection from "@/components/cart/CartSection";
+import LeftItem from "@/components/layout/header/LeftItem";
+import NavDesk from "@/components/layout/header/NavDesk";
 import NavMobile from "@/components/layout/header/NavMobile";
+import RightSection from "@/components/layout/header/right-section/RightSection";
 import SpaceX from "@/components/layout/SpaceX";
 import MotionSlide from "@/components/motion/MotionSlide";
 import Drawer from "@/components/other/Drawer";
 import useCloseMobileNavOnDesktop from "@/hooks/useCloseMobileNavOnDesktop";
 import { useState } from "react";
-import LeftItem from "./LeftItem";
-import NavDesk from "./NavDesk";
-import RightSection from "./RightSection";
 
 const Header = () => {
-  const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+  const [isMobileNavVisible, setIsMobileNavVisible] = useState<boolean>(false);
+  const [isCartVisible, setIsCartVisible] = useState<boolean>(false);
   useCloseMobileNavOnDesktop({ setIsMobileNavVisible });
 
   return (
@@ -19,7 +21,7 @@ const Header = () => {
         direction="up"
         className="z-9999 fixed top-0 w-full min-w-[20rem] max-w-[120rem]"
       >
-        <SpaceX className="bg-surface-bright/90 backdrop-blur-[0.5rem] border-b border-b-on-surface/15 min-h-header-mobile xl:min-h-header-desktop flex items-center justify-between">
+        <SpaceX className="bg-surface-bright/95 backdrop-blur-[0.5rem] border-b border-b-on-surface/15 min-h-header-mobile xl:min-h-header-desktop flex items-center justify-between">
           <LeftItem
             onClick={() => {
               if (isMobileNavVisible) {
@@ -31,6 +33,8 @@ const Header = () => {
           <RightSection
             isMobileNavVisible={isMobileNavVisible}
             setIsMobileNavVisible={setIsMobileNavVisible}
+            isCartVisible={isCartVisible}
+            setIsCartVisible={setIsCartVisible}
           />
         </SpaceX>
       </MotionSlide>
@@ -42,11 +46,29 @@ const Header = () => {
         }}
         position="top"
         closeButton={null}
-        className="pb-[7rem] bg-surface-bright mt-header-mobile xl:hidden"
+        hideOverlay
+        disableOutsideOnClose
+        className="pb-[7rem] bg-surface-bright/95 backdrop-blur-[0.5rem] mt-header-mobile xl:hidden"
       >
         <NavMobile
           onClose={() => {
             setIsMobileNavVisible(false);
+          }}
+        />
+      </Drawer>
+
+      <Drawer
+        visible={isCartVisible}
+        onClose={() => {
+          setIsCartVisible(false);
+        }}
+        position="right"
+        closeButton={null}
+        className="bg-surface-bright w-full md:w-[30rem] h-full z-99999 md:border-l md:border-l-outline"
+      >
+        <CartSection
+          onClose={() => {
+            setIsCartVisible(false);
           }}
         />
       </Drawer>
