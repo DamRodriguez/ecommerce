@@ -3,5 +3,5 @@ type CartSectionProps = {
 };
 
 export default function CartSection({ onClose }: CartSectionProps) {
-  return <section className="w-full h-full">hola</section>;
+  return <section className="w-full h-full"></section>;
 }
