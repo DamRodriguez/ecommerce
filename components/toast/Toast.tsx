@@ -40,7 +40,7 @@ const Toast = ({ type, text, closeToast, manualClose }: ToastProps) => {
   return (
     <div
       className={clsx(
-        "w-full flex justify-between items-center pl-[0.2rem] py-[0.8rem] sm:py-[1rem]",
+        "w-full flex justify-between items-center pl-[0.1rem] xl:pl-[0.2rem] py-[0.8rem] sm:py-[1rem]",
         toastItem.bgClassName,
       )}
     >
@@ -50,9 +50,7 @@ const Toast = ({ type, text, closeToast, manualClose }: ToastProps) => {
             {toastItem.title}
           </p>
         )}
-        <p className="text-base sm:text-lg text-on-surface font-accent">
-          {text}
-        </p>
+        <p className="text-sm sm:text-lg text-on-surface font-accent">{text}</p>
       </div>
       {manualClose && <CustomCloseButton closeToast={closeToast} />}
     </div>
