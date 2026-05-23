@@ -23,6 +23,18 @@ export default function CartButton({ product }: CartButtonProps) {
   const productIsInCart = isInCart(product.id);
   const quantity = getItemQuantity(product.id);
 
+  const handleFirstAddToCart = () => {
+    addToCart(product);
+  };
+
+  const handleRemoveOneFromCart = () => {
+    removeOneFromCart(product.id);
+  };
+
+  const handleAddOneToCart = () => {
+    addToCart(product);
+  };
+
   if (!isCartLoaded) {
     return (
       <Button disabled className="w-full shadow-s6" customUppercase>
@@ -42,7 +54,7 @@ export default function CartButton({ product }: CartButtonProps) {
           distance={24}
         >
           <Button
-            onClick={() => addToCart(product)}
+            onClick={handleFirstAddToCart}
             className="w-full shadow-s6 2xl:shadow-none"
             customUppercase
           >
@@ -59,7 +71,7 @@ export default function CartButton({ product }: CartButtonProps) {
           distance={24}
           className="flex w-full justify-between bg-gray shadow-s6 2xl:shadow-none"
         >
-          <Button onClick={() => removeOneFromCart(product.id)}>
+          <Button onClick={handleRemoveOneFromCart}>
             <Minus />
           </Button>
 
@@ -69,7 +81,7 @@ export default function CartButton({ product }: CartButtonProps) {
             </MotionQuantity>
           </div>
 
-          <Button onClick={() => addToCart(product)}>
+          <Button onClick={handleAddOneToCart}>
             <Plus />
           </Button>
         </MotionSlidePresence>
