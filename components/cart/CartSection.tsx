@@ -17,8 +17,8 @@ export default function CartSection({ onClose }: CartSectionProps) {
   const hasCartItems = cartItems.length > 0;
 
   return (
-    <>
-      <div className="flex justify-between items-center px-lg h-header-mobile xl:h-header-desktop border-b border-outline bg-surface">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden">
+      <div className="shrink-0 flex justify-between items-center px-lg h-header-mobile xl:h-header-desktop border-b border-outline bg-surface">
         <div>
           <h2 className="text-lg xl:text-2xl text-on-surface">
             Carrito de Compras
@@ -30,9 +30,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
               aria-label="Vaciar carrito"
               className="text-secondary-text hover:text-on-surface custom-transition-all cursor-pointer flex gap-xxs items-center"
             >
-              <div>
-                <Trash className="w-4 h-4" />
-              </div>
+              <Trash className="w-4 h-4" />
               <p className="text-sm xl:text-base">Vaciar</p>
             </button>
           )}
@@ -47,10 +45,11 @@ export default function CartSection({ onClose }: CartSectionProps) {
         </button>
       </div>
 
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 min-h-0 overflow-hidden">
         <AnimatePresence mode="wait" initial={false}>
           {hasCartItems ? (
             <motion.div
+              key="cart-items"
               layout
               className="h-full divide-y divide-outline overflow-y-auto scrollbarCustom"
             >
@@ -68,6 +67,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
               className="h-full px-lg text-on-surface text-base xl:text-lg flex flex-col justify-center items-center gap-sm xl:gap-md text-center"
             >
               <ShoppingBasket className="w-7 h-7 xl:w-9 xl:h-9 stroke-on-surface" />
+
               <div>
                 <p>
                   Tu carrito está vacío <br />
@@ -82,9 +82,10 @@ export default function CartSection({ onClose }: CartSectionProps) {
       </div>
 
       {hasCartItems && (
-        <div className="border-t border-outline bg-surface p-lg sticky w-full bottom-0 z-10">
+        <div className="shrink-0 border-t border-outline bg-surface p-lg w-full">
           <div className="flex justify-between items-end mb-xs gap-sm">
             <span className="text-on-surface tracking-widest">SUBTOTAL</span>
+
             <span className="font-accent text-on-surface font-semibold text-lg xl:text-xl line-clamp-1">
               {formatMoney(totalPrice)}
             </span>
@@ -100,6 +101,6 @@ export default function CartSection({ onClose }: CartSectionProps) {
           </LinkButton>
         </div>
       )}
-    </>
+    </div>
   );
 }
