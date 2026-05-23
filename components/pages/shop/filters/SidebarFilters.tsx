@@ -1,4 +1,5 @@
 "use client";
+import MotionFade from "@/components/motion/MotionFade";
 import MotionSlide from "@/components/motion/MotionSlide";
 import {
   ShopFiltersAction,
@@ -168,17 +169,14 @@ export default function SidebarFilters({
 
   return (
     <>
-      <MotionSlide
-        direction="up"
-        className="xl:hidden sticky top-header-mobile z-20"
-      >
+      <MotionFade className="xl:hidden sticky top-header-mobile z-20">
         <Button onClick={() => setIsOpen(true)} full border variant="secondary">
           <span className="flex items-center justify-center gap-xs">
             <SlidersHorizontal className="w-4 h-4" />
             Filtros
           </span>
         </Button>
-      </MotionSlide>
+      </MotionFade>
 
       {/* Desktop */}
       <MotionSlide

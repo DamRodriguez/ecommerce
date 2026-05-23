@@ -40,7 +40,7 @@ export default function ProductCard({ data }: ProductCardProps) {
           >
             <div className="absolute inset-0 bg-outline/15 [clip-path:polygon(100%_0,100%_88%,12%_0)]" />
             <div className="absolute top-0 right-0 w-[calc(100%-1px)] h-[calc(100%-1px)] bg-on-surface [clip-path:polygon(100%_0,100%_85%,15%_0)]" />
-            <ShoppingBag className="absolute top-sm right-sm w-5 h-5" />
+            <ShoppingBag className="absolute top-sm right-sm w-5 h-5 stroke-surface" />
           </MotionOpacity>
         )}
       </AnimatePresence>
