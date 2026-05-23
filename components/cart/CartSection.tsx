@@ -47,12 +47,12 @@ export default function CartSection({ onClose }: CartSectionProps) {
         </button>
       </div>
 
-      <div className="flex-1 min-h-0 overflow-hidden">
+      <div className="flex-1 overflow-hidden">
         <AnimatePresence mode="wait" initial={false}>
           {hasCartItems ? (
             <motion.div
               layout
-              className="h-[calc(100%-11rem)] divide-y divide-outline overflow-y-auto scrollbarCustom"
+              className="h-full divide-y divide-outline overflow-y-auto scrollbarCustom"
             >
               <AnimatePresence mode="popLayout" initial={false}>
                 {cartItems.map((item) => (
@@ -82,7 +82,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
       </div>
 
       {hasCartItems && (
-        <div className="border-t border-outline bg-surface p-lg fixed h-[11rem] w-full bottom-0 z-10">
+        <div className="border-t border-outline bg-surface p-lg sticky w-full bottom-0 z-10">
           <div className="flex justify-between items-end mb-xs gap-sm">
             <span className="text-on-surface tracking-widest">SUBTOTAL</span>
             <span className="font-accent text-on-surface font-semibold text-lg xl:text-xl line-clamp-1">
