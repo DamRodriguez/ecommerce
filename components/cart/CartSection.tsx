@@ -17,7 +17,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
   const hasCartItems = cartItems.length > 0;
 
   return (
-    <>
+    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden">
       <div className="flex justify-between items-center px-lg h-header-mobile xl:h-header-desktop border-b border-outline bg-surface">
         <div>
           <h2 className="text-lg xl:text-2xl text-on-surface">
@@ -47,10 +47,11 @@ export default function CartSection({ onClose }: CartSectionProps) {
         </button>
       </div>
 
-      <div className="flex-1 overflow-hidden">
+      <div className="min-h-0 overflow-hidden">
         <AnimatePresence mode="wait" initial={false}>
           {hasCartItems ? (
             <motion.div
+              key="cart-items"
               layout
               className="h-full divide-y divide-outline overflow-y-auto scrollbarCustom"
             >
@@ -82,7 +83,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
       </div>
 
       {hasCartItems && (
-        <div className="border-t border-outline bg-surface p-lg sticky w-full bottom-0 z-10">
+        <div className="border-t border-outline bg-surface p-lg w-full z-10">
           <div className="flex justify-between items-end mb-xs gap-sm">
             <span className="text-on-surface tracking-widest">SUBTOTAL</span>
             <span className="font-accent text-on-surface font-semibold text-lg xl:text-xl line-clamp-1">
@@ -100,6 +101,6 @@ export default function CartSection({ onClose }: CartSectionProps) {
           </LinkButton>
         </div>
       )}
-    </>
+    </div>
   );
 }
