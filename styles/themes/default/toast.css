@@ -11,7 +11,7 @@
   overflow: hidden !important;
 
   @media (max-width: 1023px) {
-    width: min(22rem, calc(100vw - 2rem)) !important;
+    width: min(22rem, calc(100vw - 3rem)) !important;
     padding-left: 0.7rem !important;
   }
 }
