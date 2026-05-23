@@ -24,6 +24,7 @@ type ButtonProps = {
   cursorNormal?: boolean;
   customUppercase?: boolean;
   border?: boolean;
+  small?: boolean;
 };
 
 const Button = ({
@@ -41,6 +42,7 @@ const Button = ({
   cursorNormal = false,
   customUppercase,
   border = false,
+  small = false,
 }: ButtonProps) => {
   const isDisabled = disabled || isLoading;
 
@@ -48,6 +50,7 @@ const Button = ({
     buttonClass({
       intent: variant,
       disabled: isDisabled,
+      small: small,
       outline,
       full,
       cursorNormal,

@@ -181,7 +181,12 @@ export default function SidebarFilters({
       </MotionSlide>
 
       {/* Desktop */}
-      <MotionSlide direction="down" order={1} className="xl:mt-xl">
+      <MotionSlide
+        viewAmount={0}
+        direction="down"
+        order={1}
+        className="xl:mt-xl"
+      >
         <aside className="hidden xl:flex w-full md:w-64 flex-shrink-0 h-fit flex-col gap-xl top-[calc(var(--height-header-desktop)+2rem)] sticky">
           {filtersContent}
         </aside>
@@ -223,7 +228,7 @@ export default function SidebarFilters({
             </button>
           </div>
 
-          <div className="flex flex-col gap-md my-xs">{filtersContent}</div>
+          <div className="flex flex-col gap-md my-sm">{filtersContent}</div>
 
           <Button onClick={closeFilters} full customUppercase>
             Ver resultados

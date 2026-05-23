@@ -63,7 +63,7 @@ const NewsletterForm = () => {
           {...inputCommonProps}
           name={NewsletterSchemaFieldNames.email}
           placeholder="INGRESE SU EMAIL"
-          className="border border-r-0 px-[1rem] h-[3rem] xl:h-[4rem]"
+          className="border border-r-0 px-[1rem] h-[2.7rem] xl:h-[3.5rem]"
         />
         <div>
           <Button customUppercase type="submit" isLoading={isSubmitting}>

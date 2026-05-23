@@ -57,7 +57,7 @@ export default function CartButton({ product }: CartButtonProps) {
           initialDirection="down"
           exitDirection="down"
           distance={24}
-          className="flex w-full justify-between bg-outline shadow-s6 2xl:shadow-none"
+          className="flex w-full justify-between bg-gray shadow-s6 2xl:shadow-none"
         >
           <Button onClick={() => removeOneFromCart(product.id)}>
             <Minus />

@@ -71,8 +71,8 @@ const useCart = () => {
     const productAlreadyInCart = isInCart(product.id);
 
     const toastMessage = productAlreadyInCart
-      ? `Unidad de ${product.name} añadida al carrito.`
-      : `${product.name} ha sido añadido al carrito.`;
+      ? `Unidad de ${product.name} añadida al carrito!`
+      : `${product.name} ha sido añadido al carrito!`;
 
     dispatch(addToCartAction(product));
     showToast("success", toastMessage);
@@ -86,11 +86,11 @@ const useCart = () => {
     dispatch(removeOneFromCartAction(productId));
 
     if (quantity <= 1) {
-      showToast("info", `${product.name} ha sido eliminado del carrito.`);
+      showToast("info", `${product.name} ha sido eliminado del carrito`);
       return;
     }
 
-    showToast("info", `Unidad de ${product.name} eliminada del carrito.`);
+    showToast("info", `Unidad de ${product.name} eliminada del carrito`);
   };
 
   const removeFromCart = (productId: string) => {
@@ -98,14 +98,14 @@ const useCart = () => {
     if (!product) return;
 
     dispatch(removeFromCartAction(productId));
-    showToast("info", `${product.name} ha sido eliminado del carrito.`);
+    showToast("info", `${product.name} ha sido eliminado del carrito`);
   };
 
   const clearCart = () => {
     if (isCartEmpty) return;
 
     dispatch(clearCartAction());
-    showToast("info", "Carrito vaciado.");
+    showToast("info", "Carrito vaciado");
   };
 
   const setItemQuantity = (productId: string, quantity: number) => {

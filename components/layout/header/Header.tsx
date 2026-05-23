@@ -64,7 +64,7 @@ const Header = () => {
         }}
         position="right"
         closeButton={null}
-        className="bg-surface-bright w-full md:w-[30rem] h-full z-99999 md:border-l md:border-l-outline"
+        className="bg-surface-bright flex flex-col w-full sm:w-[30rem] h-full z-999999 md:border-l md:border-l-outline"
       >
         <CartSection
           onClose={() => {

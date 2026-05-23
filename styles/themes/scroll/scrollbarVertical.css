@@ -12,7 +12,7 @@
 }
 
 .scrollbarCustom::-webkit-scrollbar-track {
-  background-color: var(--color-surface);
+  background-color: var(--color-outline);
 }
 
 @media (min-width: 1024px) {

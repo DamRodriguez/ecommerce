@@ -5,7 +5,7 @@ export const buttonClass = tv({
     "relative overflow-hidden custom-transition-all",
     "text-sm xl:text-lg font-accent",
     "flex items-center justify-center",
-    "px-[1.5rem] xl:px-[2rem] h-[3rem] xl:h-[4rem]",
+    "px-[1.5rem] xl:px-[2rem] h-[2.7rem] xl:h-[3.5rem]",
 
     "before:absolute before:left-0 before:bottom-0 before:z-0 before:h-0 before:w-full",
     "before:custom-transition-all before:duration-400 before:ease-in-out",
@@ -67,6 +67,11 @@ export const buttonClass = tv({
     border: {
       false: null,
       true: "border",
+    },
+
+    small: {
+      false: null,
+      true: "!px-[0.7rem] !h-[1.7rem] xl:!px-[1rem] xl:!h-[2rem] !text-xs",
     },
   },
 
