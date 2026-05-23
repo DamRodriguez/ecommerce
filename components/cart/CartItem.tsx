@@ -10,7 +10,9 @@ type CartItemProps = {
 };
 
 export default function CartItem({ data }: CartItemProps) {
-  const { removeFromCart } = useCart();
+  const { removeFromCart, getItemQuantity } = useCart();
+
+  const quantity = getItemQuantity(data.id);
 
   const handleRemoveAll = () => {
     removeFromCart(data.id);
@@ -28,7 +30,7 @@ export default function CartItem({ data }: CartItemProps) {
         />
       </div>
       <div className="ml-md flex-1 flex flex-col justify-between h-20 xl:h-24">
-        <div className="">
+        <div>
           <div className="flex justify-between items-end gap-sm">
             <p className="text-base xl:text-lg text-on-surface leading-tight line-clamp-1">
               {data.name}
@@ -45,11 +47,10 @@ export default function CartItem({ data }: CartItemProps) {
             {data.category} / {data.subcategory}
           </p>
         </div>
-
-        <div className="flex justify-between items-end mt-sm gap-sm">
+        <div className="flex justify-between items-end gap-sm">
           <QuantityButton product={data} />
           <span className="text-sm xl:text-base font-semibold font-accent text-on-surface line-clamp-1">
-            {formatMoney(data.price)}
+            {formatMoney(data.price * quantity)}
           </span>
         </div>
       </div>
