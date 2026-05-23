@@ -3,6 +3,7 @@ import CartItem from "@/components/cart/CartItem";
 import MotionFade from "@/components/motion/MotionFade";
 import MotionLayoutItem from "@/components/motion/MotionLayoutItem";
 import LinkButton from "@/components/ui/buttons/LinkButton";
+import { useVisualViewportHeight } from "@/hooks/useVisualViewportHeight";
 import useCart from "@/redux/cart/useCart";
 import { formatMoney } from "@/utils/formatMoney";
 import { AnimatePresence, motion } from "framer-motion";
@@ -16,8 +17,13 @@ export default function CartSection({ onClose }: CartSectionProps) {
   const { cartItems, totalPrice, clearCart } = useCart();
   const hasCartItems = cartItems.length > 0;
 
+  useVisualViewportHeight({
+    variableName: "--cart-vh",
+    fallbackValue: "100dvh",
+  });
+
   return (
-    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden">
+    <div className="grid h-[var(--cart-vh,100dvh)] min-h-0 grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden bg-surface-bright">
       <div className="flex justify-between items-center px-lg h-header-mobile xl:h-header-desktop border-b border-outline bg-surface">
         <div>
           <h2 className="text-lg xl:text-2xl text-on-surface">
@@ -33,6 +39,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
               <div>
                 <Trash className="w-4 h-4" />
               </div>
+
               <p className="text-sm xl:text-base">Vaciar</p>
             </button>
           )}
@@ -53,7 +60,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
             <motion.div
               key="cart-items"
               layout
-              className="h-full divide-y divide-outline overflow-y-auto scrollbarCustom"
+              className="h-full divide-y divide-outline overflow-y-auto overscroll-contain scrollbarCustom"
             >
               <AnimatePresence mode="popLayout" initial={false}>
                 {cartItems.map((item) => (
@@ -69,6 +76,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
               className="h-full px-lg text-on-surface text-base xl:text-lg flex flex-col justify-center items-center gap-sm xl:gap-md text-center"
             >
               <ShoppingBasket className="w-7 h-7 xl:w-9 xl:h-9 stroke-on-surface" />
+
               <div>
                 <p>
                   Tu carrito está vacío <br />
@@ -83,9 +91,10 @@ export default function CartSection({ onClose }: CartSectionProps) {
       </div>
 
       {hasCartItems && (
-        <div className="border-t border-outline bg-surface p-lg w-full z-10">
+        <div className="border-t border-outline bg-surface p-lg w-full z-10 pb-[calc(var(--spacing-lg)+env(safe-area-inset-bottom))]">
           <div className="flex justify-between items-end mb-xs gap-sm">
             <span className="text-on-surface tracking-widest">SUBTOTAL</span>
+
             <span className="font-accent text-on-surface font-semibold text-lg xl:text-xl line-clamp-1">
               {formatMoney(totalPrice)}
             </span>
