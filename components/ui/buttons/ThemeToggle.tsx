@@ -53,7 +53,7 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <div className="container flex items-center justify-center opacity-0">
-        <div className="w-[2.17375rem] xl:w-[2.67375rem] aspect-square" />
+        <div className="w-[1.4rem] xl:w-[1.7rem] aspect-square" />
       </div>
     );
   }
@@ -64,7 +64,7 @@ export function ThemeToggle() {
     <div className="container flex items-center justify-center">
       <label
         htmlFor="switch"
-        className="group relative grid w-[2.5rem] xl:w-[3rem] aspect-square cursor-pointer place-items-center group"
+        className="group relative grid aspect-square cursor-pointer place-items-center group"
       >
         <input
           type="checkbox"
