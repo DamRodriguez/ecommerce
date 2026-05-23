@@ -40,7 +40,7 @@ const Toast = ({ type, text, closeToast, manualClose }: ToastProps) => {
   return (
     <div
       className={clsx(
-        "w-full flex justify-between items-center pl-[0.1rem] xl:pl-[0.2rem] py-[0.8rem] sm:py-[1rem]",
+        "w-full flex justify-between items-center pl-[0.1rem] xl:pl-[0.5rem] py-[0.8rem] sm:py-[1rem]",
         toastItem.bgClassName,
       )}
     >
