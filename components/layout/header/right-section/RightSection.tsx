@@ -26,7 +26,7 @@ const RightSection = (props: RightSectionProps) => {
       <ThemeToggle />
       <div
         className={clsx("custom-transition-all", {
-          "mr-[0.7rem] md:mr-[1.2rem] xl:mr-0": totalItems > 0,
+          "mr-[0.8rem] md:mr-[1.3rem] xl:mr-0": totalItems > 0,
         })}
       >
         <HeaderCartButton onClick={handleToggleCart} />

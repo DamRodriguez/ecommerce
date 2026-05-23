@@ -16,7 +16,7 @@ export default function HeaderCartButton({ onClick }: HeaderCartButtonProps) {
         aria-label="Carrito de compras"
         className="cursor-pointer group"
       >
-        <ShoppingBag />
+        <ShoppingBag className="stroke-on-surface" />
       </button>
 
       {totalItems > 0 && (
