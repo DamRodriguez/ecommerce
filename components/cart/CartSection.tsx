@@ -1,13 +1,13 @@
 "use client";
 import CartItem from "@/components/cart/CartItem";
-import MotionFade from "@/components/motion/MotionFade";
+import EmptyCart from "@/components/cart/EmptyCart";
 import MotionLayoutItem from "@/components/motion/MotionLayoutItem";
 import LinkButton from "@/components/ui/buttons/LinkButton";
 import { useVisualViewportHeight } from "@/hooks/useVisualViewportHeight";
-import useCart from "@/redux/cart/useCart";
+import useCart from "@/redux/cart/products/useCart";
 import { formatMoney } from "@/utils/formatMoney";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, ShoppingBasket, Trash, X } from "lucide-react";
+import { ArrowRight, Trash, X } from "lucide-react";
 
 type CartSectionProps = {
   onClose: () => void;
@@ -71,21 +71,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
               </AnimatePresence>
             </motion.div>
           ) : (
-            <MotionFade
-              key="empty-cart"
-              className="h-full px-lg text-on-surface text-base xl:text-lg flex flex-col justify-center items-center gap-sm xl:gap-md text-center"
-            >
-              <ShoppingBasket className="w-7 h-7 xl:w-9 xl:h-9 stroke-on-surface" />
-
-              <div>
-                <p>
-                  Tu carrito está vacío <br />
-                  <span className="text-secondary-text">
-                    Agregá productos para comenzar a comprar
-                  </span>
-                </p>
-              </div>
-            </MotionFade>
+            <EmptyCart />
           )}
         </AnimatePresence>
       </div>

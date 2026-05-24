@@ -7,7 +7,6 @@ type RightSectionProps = {
   isMobileNavVisible: boolean;
   setIsMobileNavVisible: React.Dispatch<React.SetStateAction<boolean>>;
   isCartVisible: boolean;
-  setIsCartVisible: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const RightSection = (props: RightSectionProps) => {
@@ -15,14 +14,10 @@ const RightSection = (props: RightSectionProps) => {
     props.setIsMobileNavVisible((prev) => !prev);
   };
 
-  const handleToggleCart = () => {
-    props.setIsCartVisible((prev) => !prev);
-  };
-
   return (
     <div className="flex items-center gap-[1.5rem] xl:gap-[2rem]">
       <ThemeToggle />
-      <HeaderCartButton onClick={handleToggleCart} />
+      <HeaderCartButton />
 
       <div className="flex xl:hidden">
         <button

@@ -1,7 +1,5 @@
 import { ProductCardData } from "@/components/pages/shop/ProductCard";
 import showToast from "@/components/toast/showToast";
-import { useEffect, useMemo, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../hooks";
 import {
   addToCart as addToCartAction,
   clearCart as clearCartAction,
@@ -10,7 +8,9 @@ import {
   setCart as setCartAction,
   setItemQuantity as setItemQuantityAction,
   type CartItem,
-} from "./cartSlice";
+} from "@/redux/cart/products/cartSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useEffect, useMemo, useState } from "react";
 
 const CART_STORAGE_KEY = "cart";
 

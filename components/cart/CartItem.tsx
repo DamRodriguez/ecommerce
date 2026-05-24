@@ -1,7 +1,7 @@
 import CustomImage from "@/components/other/CustomImage";
 import { ProductCardData } from "@/components/pages/shop/ProductCard";
 import QuantityButton from "@/components/ui/buttons/cart/QuantityButton";
-import useCart from "@/redux/cart/useCart";
+import useCart from "@/redux/cart/products/useCart";
 import { formatMoney } from "@/utils/formatMoney";
 import { Trash } from "lucide-react";
 import { memo } from "react";

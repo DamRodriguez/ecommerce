@@ -8,12 +8,23 @@ import SpaceX from "@/components/layout/SpaceX";
 import MotionSlide from "@/components/motion/MotionSlide";
 import Drawer from "@/components/other/Drawer";
 import useCloseMobileNavOnDesktop from "@/hooks/useCloseMobileNavOnDesktop";
-import { useState } from "react";
+import useCartDrawer from "@/redux/cart/drawer/useCartDrawer";
+import { useCallback, useState } from "react";
 
 const Header = () => {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState<boolean>(false);
-  const [isCartVisible, setIsCartVisible] = useState<boolean>(false);
+  const { isCartDrawerOpen, closeCartDrawer } = useCartDrawer();
   useCloseMobileNavOnDesktop({ setIsMobileNavVisible });
+
+  const closeMobileNav = useCallback(() => {
+    setIsMobileNavVisible(false);
+  }, []);
+
+  const handleLeftItemClick = useCallback(() => {
+    if (isMobileNavVisible) {
+      setIsMobileNavVisible(false);
+    }
+  }, [isMobileNavVisible]);
 
   return (
     <header>
@@ -22,55 +33,36 @@ const Header = () => {
         className="z-9999 fixed top-0 w-full min-w-[20rem] max-w-[120rem]"
       >
         <SpaceX className="bg-surface-bright/95 backdrop-blur-[0.5rem] border-b border-b-on-surface/15 min-h-header-mobile xl:min-h-header-desktop flex items-center justify-between">
-          <LeftItem
-            onClick={() => {
-              if (isMobileNavVisible) {
-                setIsMobileNavVisible(false);
-              }
-            }}
-          />
+          <LeftItem onClick={handleLeftItemClick} />
           <NavDesk />
           <RightSection
             isMobileNavVisible={isMobileNavVisible}
             setIsMobileNavVisible={setIsMobileNavVisible}
-            isCartVisible={isCartVisible}
-            setIsCartVisible={setIsCartVisible}
+            isCartVisible={isCartDrawerOpen}
           />
         </SpaceX>
       </MotionSlide>
 
       <Drawer
         visible={isMobileNavVisible}
-        onClose={() => {
-          setIsMobileNavVisible(false);
-        }}
+        onClose={closeMobileNav}
         position="top"
         closeButton={null}
         hideOverlay
         disableOutsideOnClose
         className="pb-[7rem] bg-surface-bright/95 backdrop-blur-[0.5rem] mt-header-mobile xl:hidden"
       >
-        <NavMobile
-          onClose={() => {
-            setIsMobileNavVisible(false);
-          }}
-        />
+        <NavMobile onClose={closeMobileNav} />
       </Drawer>
 
       <Drawer
-        visible={isCartVisible}
-        onClose={() => {
-          setIsCartVisible(false);
-        }}
+        visible={isCartDrawerOpen}
+        onClose={closeCartDrawer}
         position="right"
         closeButton={null}
         className="bg-surface-bright flex flex-col w-full sm:w-[30rem] h-dvh z-999999 md:border-l md:border-l-outline"
       >
-        <CartSection
-          onClose={() => {
-            setIsCartVisible(false);
-          }}
-        />
+        <CartSection onClose={closeCartDrawer} />
       </Drawer>
     </header>
   );

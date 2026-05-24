@@ -1,16 +1,19 @@
 "use client";
 import MotionFade from "@/components/motion/MotionFade";
-import useCart from "@/redux/cart/useCart";
+import useCartDrawer from "@/redux/cart/drawer/useCartDrawer";
+import useCart from "@/redux/cart/products/useCart";
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
 import { ShoppingBag } from "lucide-react";
 
-type HeaderCartButtonProps = {
-  onClick: () => void;
-};
-
-export default function HeaderCartButton({ onClick }: HeaderCartButtonProps) {
+export default function HeaderCartButton() {
+  const { openCartDrawer } = useCartDrawer();
   const { totalItems } = useCart();
+
+  const handleOpenCart = () => {
+    openCartDrawer();
+  };
+
   return (
     <div
       className={clsx("flex relative custom-transition-all", {
@@ -18,7 +21,7 @@ export default function HeaderCartButton({ onClick }: HeaderCartButtonProps) {
       })}
     >
       <button
-        onClick={onClick}
+        onClick={handleOpenCart}
         type="button"
         aria-label="Carrito de compras"
         className="cursor-pointer group"

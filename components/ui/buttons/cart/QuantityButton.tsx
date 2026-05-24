@@ -2,7 +2,7 @@
 import MotionQuantity from "@/components/motion/MotionQuantity";
 import { ProductCardData } from "@/components/pages/shop/ProductCard";
 import Button from "@/components/ui/buttons/Button";
-import useCart from "@/redux/cart/useCart";
+import useCart from "@/redux/cart/products/useCart";
 import { Minus, Plus } from "lucide-react";
 
 type QuantityButtonProps = {
@@ -28,6 +28,7 @@ export default function QuantityButton({ product }: QuantityButtonProps) {
         outline
         small
         className="border-outline group-hover:bg-surface-bright"
+        aria-label={`Remover una unidad de ${product.name} del carrito`}
       >
         <Minus className="w-4 h-4" />
       </Button>
@@ -43,6 +44,7 @@ export default function QuantityButton({ product }: QuantityButtonProps) {
         outline
         small
         className="border-outline group-hover:bg-surface-bright"
+        aria-label={`Agregar una unidad más de ${product.name} al carrito`}
       >
         <Plus className="w-4 h-4" />
       </Button>

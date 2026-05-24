@@ -2,7 +2,7 @@
 import MotionOpacity from "@/components/motion/MotionOpacity";
 import CustomImage from "@/components/other/CustomImage";
 import CartButton from "@/components/ui/buttons/cart/CartButton";
-import useCart from "@/redux/cart/useCart";
+import useCart from "@/redux/cart/products/useCart";
 import { formatMoney } from "@/utils/formatMoney";
 import { AnimatePresence } from "framer-motion";
 import { ShoppingBag } from "lucide-react";
