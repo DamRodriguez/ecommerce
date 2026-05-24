@@ -20,7 +20,7 @@ const RightSection = (props: RightSectionProps) => {
   };
 
   return (
-    <div className="flex items-center gap-[1rem] md:gap-[1.5rem] xl:gap-[2rem]">
+    <div className="flex items-center gap-[1.5rem] xl:gap-[2rem]">
       <ThemeToggle />
       <HeaderCartButton onClick={handleToggleCart} />
 

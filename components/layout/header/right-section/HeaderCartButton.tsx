@@ -14,7 +14,7 @@ export default function HeaderCartButton({ onClick }: HeaderCartButtonProps) {
   return (
     <div
       className={clsx("flex relative custom-transition-all", {
-        "mr-[0.7rem] md:mr-[1.2rem] xl:mr-0": totalItems > 0,
+        "mr-[0.6rem] xl:mr-0": totalItems > 0,
       })}
     >
       <button
@@ -30,7 +30,7 @@ export default function HeaderCartButton({ onClick }: HeaderCartButtonProps) {
         {totalItems > 0 && (
           <MotionFade
             duration={0.3}
-            className="absolute -bottom-2.5 -right-2.5 xl:-bottom-3 xl:-right-3 flex h-[1.2rem] min-w-[1.2rem] xl:h-[1.4rem] xl:min-w-[1.4rem] items-center justify-center rounded-full bg-on-surface px-[0.35rem] text-xs text-surface-bright shadow-s6 pointer-events-none font-semibold leading-none"
+            className="absolute -bottom-2.5 -right-2.5 xl:-bottom-3 xl:-right-3 flex h-[1.2rem] min-w-[1.2rem] xl:h-[1.4rem] xl:min-w-[1.4rem] items-center justify-center rounded-full aspect-square bg-on-surface px-[0.35rem] text-xs text-surface-bright shadow-s6 pointer-events-none font-semibold leading-none"
           >
             {totalItems > 99 ? "99+" : totalItems}
           </MotionFade>
