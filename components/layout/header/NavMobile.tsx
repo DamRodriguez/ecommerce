@@ -2,6 +2,7 @@
 import SpaceX from "@/components/layout/SpaceX";
 import SocialButtons from "@/components/other/SocialButtons";
 import { routeItems } from "@/constants/routeItems";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import Link from "next/link";
 
 type NavMobileProps = {
@@ -9,6 +10,16 @@ type NavMobileProps = {
 };
 
 const NavMobile = ({ onClose }: NavMobileProps) => {
+  const { handleSmoothScroll } = useSmoothScroll();
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    handleSmoothScroll(e, href);
+    onClose();
+  };
+
   return (
     <SpaceX className="pt-[2rem] pb-[10rem] justify-between flex flex-col h-full">
       <nav>
@@ -20,7 +31,7 @@ const NavMobile = ({ onClose }: NavMobileProps) => {
             >
               <Link
                 href={href}
-                onClick={onClose}
+                onClick={(e) => handleNavClick(e, href)}
                 className="text-on-surface text-base font-accent uppercase tracking-[0.1rem]"
               >
                 {label}

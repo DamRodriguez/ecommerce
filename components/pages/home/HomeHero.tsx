@@ -8,7 +8,7 @@ import { routes } from "@/constants/routes";
 export default function HomeHero() {
   return (
     <section className="w-full gap-xl pt-margin-mobile lg:pt-0 border-b border-outline relative flex flex-col lg:flex-row min-h-screen-content justify-between">
-      <SpaceX className="w-full lg:w-1/2 flex flex-col justify-center bg-surface">
+      <SpaceX className="w-full md:h-[20rem] lg:h-auto lg:w-1/2 flex flex-col justify-center bg-surface">
         <MotionSlide order={0}>
           <h1 className="text-5xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.1] text-on-surface mb-md uppercase">
             Definiendo

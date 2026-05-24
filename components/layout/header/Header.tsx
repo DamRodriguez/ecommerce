@@ -30,7 +30,7 @@ const Header = () => {
     <header>
       <MotionSlide
         direction="up"
-        className="z-9999 fixed top-0 w-full min-w-[20rem] max-w-[120rem]"
+        className="z-999999 fixed top-0 w-full min-w-[20rem] max-w-[120rem]"
       >
         <SpaceX className="bg-surface-bright/95 backdrop-blur-[0.5rem] border-b border-b-on-surface/15 min-h-header-mobile xl:min-h-header-desktop flex items-center justify-between">
           <LeftItem onClick={handleLeftItemClick} />
@@ -50,7 +50,7 @@ const Header = () => {
         closeButton={null}
         hideOverlay
         disableOutsideOnClose
-        className="pb-[7rem] bg-surface-bright/95 backdrop-blur-[0.5rem] mt-header-mobile xl:hidden"
+        className="pb-[7rem] bg-surface-bright/95 backdrop-blur-[0.5rem] mt-header-mobile xl:hidden z-99999"
       >
         <NavMobile onClose={closeMobileNav} />
       </Drawer>
