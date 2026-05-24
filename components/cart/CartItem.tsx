@@ -4,12 +4,13 @@ import QuantityButton from "@/components/ui/buttons/cart/QuantityButton";
 import useCart from "@/redux/cart/useCart";
 import { formatMoney } from "@/utils/formatMoney";
 import { Trash } from "lucide-react";
+import { memo } from "react";
 
 type CartItemProps = {
   data: ProductCardData;
 };
 
-export default function CartItem({ data }: CartItemProps) {
+function CartItem({ data }: CartItemProps) {
   const { removeFromCart, getItemQuantity } = useCart();
 
   const quantity = getItemQuantity(data.id);
@@ -57,3 +58,5 @@ export default function CartItem({ data }: CartItemProps) {
     </div>
   );
 }
+
+export default memo(CartItem);

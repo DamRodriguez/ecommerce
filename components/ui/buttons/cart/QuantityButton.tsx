@@ -12,12 +12,19 @@ type QuantityButtonProps = {
 export default function QuantityButton({ product }: QuantityButtonProps) {
   const { addToCart, removeOneFromCart, getItemQuantity } = useCart();
 
+  const handleRemoveOneFromCart = () => {
+    removeOneFromCart(product.id);
+  };
+  const handleAddOneToCart = () => {
+    addToCart(product);
+  };
+
   const quantity = getItemQuantity(product.id);
 
   return (
     <div className="flex justify-between">
       <Button
-        onClick={() => removeOneFromCart(product.id)}
+        onClick={handleRemoveOneFromCart}
         outline
         small
         className="border-outline group-hover:bg-surface-bright"
@@ -32,7 +39,7 @@ export default function QuantityButton({ product }: QuantityButtonProps) {
       </div>
 
       <Button
-        onClick={() => addToCart(product)}
+        onClick={handleAddOneToCart}
         outline
         small
         className="border-outline group-hover:bg-surface-bright"
