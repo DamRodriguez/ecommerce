@@ -18,6 +18,10 @@ export type ShopFiltersAction =
       payload: string;
     }
   | {
+      type: "SET_CATEGORIES";
+      payload: string[];
+    }
+  | {
       type: "CLEAR_CATEGORIES";
     }
   | {
@@ -53,6 +57,13 @@ export function shopFiltersReducer(
       categories: categoryAlreadySelected
         ? state.categories.filter((category) => category !== action.payload)
         : [...state.categories, action.payload],
+    };
+  }
+
+  if (action.type === "SET_CATEGORIES") {
+    return {
+      ...state,
+      categories: action.payload,
     };
   }
 

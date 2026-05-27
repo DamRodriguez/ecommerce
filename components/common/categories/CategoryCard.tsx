@@ -1,4 +1,5 @@
 import CustomImage from "@/components/other/CustomImage";
+import { routes } from "@/constants/routes";
 import { formatTwoDigits } from "@/utils/formatTwoDigits";
 import Link from "next/link";
 
@@ -16,7 +17,12 @@ export default function CategoryCard({ data }: CategoryCardProps) {
   return (
     <Link
       className="group relative block h-[25rem] lg:h-[35rem] overflow-hidden border border-on-surface/50 bg-surface-bright"
-      href="#"
+      href={{
+        pathname: routes.shop,
+        query: {
+          category: data.category,
+        },
+      }}
     >
       <CustomImage
         src={data.image}
