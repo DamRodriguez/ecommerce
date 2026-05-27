@@ -9,6 +9,6 @@ export type MotionDefaults = {
 
 export const DEFAULT_MOTION = {
   duration: 0.6,
-  viewAmount: 0.3,
+  viewAmount: 0.2,
   order: 0,
 };
