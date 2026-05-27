@@ -28,8 +28,7 @@ export default function ProductsSection({
           <MotionFade>
             <p className="text-base text-on-surface mt-xs">
               Mostrando <span className="font-accent">{data.length}</span> de{" "}
-              <span className="font-accent">{totalProducts}</span> objetos de
-              precisión arquitectónica.
+              <span className="font-accent">{totalProducts}</span> artículos.
             </p>
           </MotionFade>
         </div>
