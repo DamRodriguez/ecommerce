@@ -2,6 +2,7 @@
 import CategoryCard from "@/components/common/categories/CategoryCard";
 import SpaceX from "@/components/layout/SpaceX";
 import MotionSlide from "@/components/motion/MotionSlide";
+import MotionStretch from "@/components/motion/MotionStretch";
 import config from "@/config/config";
 import products from "@/data/products.json";
 import useBreakpoint from "@/hooks/useBreakpoint";
@@ -40,21 +41,15 @@ export default function CategoriesSection() {
 
   return (
     <SpaceX className="py-vertical-mobile lg:py-vertical-desktop bg-surface border-b border-outline">
-      <div className="flex justify-between items-end lg:items-end mb-xl border-b-4 border-outline pb-sm">
+      <div className="flex flex-col gap-xs mb-xxl">
         <MotionSlide>
           <h2 className="text-2xl lg:text-3xl font-semibold leading-[1.4] text-on-surface uppercase">
             Categorías
           </h2>
         </MotionSlide>
-        {/*
-        <MotionFade>
-          <AnimatedTextButton
-            text="ver más"
-            href="#"
-            icon={<ArrowRight className="w-4 h-4 stroke-on-surface" />}
-          />
-        </MotionFade>
-        */}
+        <MotionStretch className="w-full h-[4px] bg-outline">
+          <span />
+        </MotionStretch>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-lg">
         {categoryItems.map((item, index) => (

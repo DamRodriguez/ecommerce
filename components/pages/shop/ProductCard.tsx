@@ -27,7 +27,7 @@ function ProductCard({ data }: ProductCardProps) {
   const productIsInCart = isInCart(data.id);
 
   return (
-    <article className="group hover:border-on-surface custom-transition-all border border-outline bg-surface-bright flex flex-col relative overflow-hidden h-full cursor-pointer">
+    <article className="group hover:border-on-surface custom-transition-all border border-outline bg-surface-bright flex flex-col relative overflow-hidden h-full cursor-pointer active:opacity-80">
       {data.isNew && (
         <div className="absolute top-sm left-sm z-10 border border-outline/15 bg-on-surface text-surface font-accent text-xxs xl:text-xs px-xs xl:px-sm py-xxs xl:py-xs tracking-widest uppercase">
           NUEVO
