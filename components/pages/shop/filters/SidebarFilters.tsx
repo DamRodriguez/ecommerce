@@ -44,14 +44,16 @@ export default function SidebarFilters({
 
   return (
     <>
-      <MotionFade className="xl:hidden sticky top-header-mobile z-20">
-        <Button onClick={openFilters} full border variant="secondary">
-          <span className="flex items-center justify-center gap-xs">
-            <SlidersHorizontal className="w-4 h-4" />
-            Filtros
-          </span>
-        </Button>
-      </MotionFade>
+      <div className="xl:hidden sticky top-header-mobile z-50">
+        <MotionFade>
+          <Button onClick={openFilters} full border variant="secondary">
+            <span className="flex items-center justify-center gap-xs">
+              <SlidersHorizontal className="w-4 h-4" />
+              Filtros
+            </span>
+          </Button>
+        </MotionFade>
+      </div>
 
       {/* Desktop */}
       <MotionSlide
