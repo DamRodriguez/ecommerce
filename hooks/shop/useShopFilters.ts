@@ -1,10 +1,10 @@
 "use client";
+import type { ProductCardData } from "@/components/pages/shop/ProductCard";
 import {
   getFilteredProducts,
   initialShopFiltersState,
   shopFiltersReducer,
-} from "@/components/pages/shop/filters/shopFiltersReducer";
-import type { ProductCardData } from "@/components/pages/shop/ProductCard";
+} from "@/hooks/shop/shopFiltersReducer";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useReducer } from "react";
 

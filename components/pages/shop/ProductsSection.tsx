@@ -5,6 +5,7 @@ import MotionStretch from "@/components/motion/MotionStretch";
 import ProductCard, {
   ProductCardData,
 } from "@/components/pages/shop/ProductCard";
+import { PackageSearch } from "lucide-react";
 
 type ProductsSectionProps = {
   data: ProductCardData[];
@@ -28,7 +29,7 @@ export default function ProductsSection({
           <MotionFade>
             <p className="text-base text-on-surface mt-xs">
               Mostrando <span className="font-accent">{data.length}</span> de{" "}
-              <span className="font-accent">{totalProducts}</span> artículos.
+              <span className="font-accent">{totalProducts}</span> artículos
             </p>
           </MotionFade>
         </div>
@@ -47,13 +48,16 @@ export default function ProductsSection({
           ))}
         </div>
       ) : (
-        <MotionOpacity className="border border-outline bg-surface-bright p-xl">
-          <p className="text-on-surface text-lg xl:text-xl">
-            No se encontraron productos
-          </p>
-          <p className="text-on-surface mt-xs text-base">
-            Probá cambiar la búsqueda o limpiar los filtros
-          </p>
+        <MotionOpacity className="border border-outline bg-surface-bright p-xl flex gap-md items-center">
+          <PackageSearch className="stroke-on-surface w-8 h-8 lg:w-10 lg:h-10" />
+          <div>
+            <p className="text-on-surface text-lg xl:text-xl">
+              No se encontraron artículos
+            </p>
+            <p className="text-on-surface mt-xs text-base">
+              Probá cambiar la búsqueda o limpiar los filtros
+            </p>
+          </div>
         </MotionOpacity>
       )}
     </section>
