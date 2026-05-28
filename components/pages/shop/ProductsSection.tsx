@@ -49,7 +49,7 @@ export default function ProductsSection({
         </div>
       ) : (
         <MotionOpacity className="border border-outline bg-surface-bright p-xl flex gap-md items-center">
-          <PackageSearch className="stroke-on-surface w-8 h-8 lg:w-10 lg:h-10" />
+          <PackageSearch className="stroke-on-surface w-10 h-10" />
           <div>
             <p className="text-on-surface text-lg xl:text-xl">
               No se encontraron artículos
