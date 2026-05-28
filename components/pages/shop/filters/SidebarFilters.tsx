@@ -44,7 +44,7 @@ export default function SidebarFilters({
 
   return (
     <>
-      <div className="xl:hidden sticky top-[calc(var(--height-header-mobile)+env(safe-area-inset-top))] z-50 bg-surface">
+      <div className="xl:hidden sticky top-[calc(var(--height-header-mobile)+env(safe-area-inset-top))] z-50">
         <MotionFade>
           <Button onClick={openFilters} full border variant="secondary">
             <span className="flex items-center justify-center gap-xs">
