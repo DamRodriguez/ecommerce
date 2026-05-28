@@ -60,7 +60,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
             <motion.div
               key="cart-items"
               layout
-              className="h-full divide-y divide-outline overflow-y-auto overscroll-contain scrollbarCustom"
+              className="h-full divide-y divide-outline scrollbarCustom"
             >
               <AnimatePresence mode="popLayout" initial={false}>
                 {cartItems.map((item) => (
