@@ -1,7 +1,7 @@
-import { ProductCardData } from "@/components/pages/shop/ProductCard";
+import { ProductData } from "@/types/product";
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-export type CartItem = ProductCardData & {
+export type CartItem = ProductData & {
   quantity: number;
 };
 
@@ -21,7 +21,7 @@ const cartSlice = createSlice({
       state.items = action.payload;
     },
 
-    addToCart: (state, action: PayloadAction<ProductCardData>) => {
+    addToCart: (state, action: PayloadAction<ProductData>) => {
       const product = action.payload;
 
       const existingItem = state.items.find((item) => item.id === product.id);

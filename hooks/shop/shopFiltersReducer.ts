@@ -1,4 +1,5 @@
-import { ProductCardData } from "@/components/pages/shop/ProductCard";
+import {} from "@/components/pages/shop/ProductCard";
+import { ProductData } from "@/types/product";
 
 export type SortOption = "default" | "newest" | "price-asc" | "price-desc";
 
@@ -89,7 +90,7 @@ export function shopFiltersReducer(
 }
 
 export function getFilteredProducts(
-  products: ProductCardData[],
+  products: ProductData[],
   filters: ShopFiltersState,
 ) {
   const normalizedSearch = filters.search.trim().toLowerCase();

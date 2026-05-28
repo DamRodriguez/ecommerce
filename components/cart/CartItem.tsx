@@ -1,13 +1,13 @@
 import CustomImage from "@/components/other/CustomImage";
-import { ProductCardData } from "@/components/pages/shop/ProductCard";
 import QuantityButton from "@/components/ui/buttons/cart/QuantityButton";
 import useCart from "@/redux/cart/products/useCart";
+import { ProductData } from "@/types/product";
 import { formatMoney } from "@/utils/formatMoney";
 import { Trash } from "lucide-react";
 import { memo } from "react";
 
 type CartItemProps = {
-  data: ProductCardData;
+  data: ProductData;
 };
 
 function CartItem({ data }: CartItemProps) {

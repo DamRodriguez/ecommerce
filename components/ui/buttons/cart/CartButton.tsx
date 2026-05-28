@@ -1,14 +1,14 @@
 "use client";
 import MotionQuantity from "@/components/motion/MotionQuantity";
 import MotionSlidePresence from "@/components/motion/MotionSlidePresence";
-import { ProductCardData } from "@/components/pages/shop/ProductCard";
 import Button from "@/components/ui/buttons/Button";
 import useCart from "@/redux/cart/products/useCart";
+import { ProductData } from "@/types/product";
 import { AnimatePresence } from "framer-motion";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 
 type CartButtonProps = {
-  product: ProductCardData;
+  product: ProductData;
 };
 
 export default function CartButton({ product }: CartButtonProps) {

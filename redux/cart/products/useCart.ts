@@ -1,4 +1,3 @@
-import { ProductCardData } from "@/components/pages/shop/ProductCard";
 import showToast from "@/components/toast/showToast";
 import {
   addToCart as addToCartAction,
@@ -10,6 +9,7 @@ import {
   type CartItem,
 } from "@/redux/cart/products/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { ProductData } from "@/types/product";
 import { useEffect, useMemo, useState } from "react";
 
 const CART_STORAGE_KEY = "cart";
@@ -67,7 +67,7 @@ const useCart = () => {
 
   const isCartEmpty = cartItems.length === 0;
 
-  const addToCart = (product: ProductCardData) => {
+  const addToCart = (product: ProductData) => {
     const productAlreadyInCart = isInCart(product.id);
 
     const toastMessage = productAlreadyInCart

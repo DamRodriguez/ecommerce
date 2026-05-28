@@ -1,12 +1,12 @@
 "use client";
 import MotionQuantity from "@/components/motion/MotionQuantity";
-import { ProductCardData } from "@/components/pages/shop/ProductCard";
 import Button from "@/components/ui/buttons/Button";
 import useCart from "@/redux/cart/products/useCart";
+import { ProductData } from "@/types/product";
 import { Minus, Plus } from "lucide-react";
 
 type QuantityButtonProps = {
-  product: ProductCardData;
+  product: ProductData;
 };
 
 export default function QuantityButton({ product }: QuantityButtonProps) {

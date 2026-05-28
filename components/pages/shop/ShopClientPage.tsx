@@ -1,11 +1,11 @@
 "use client";
 import SidebarFilters from "@/components/pages/shop/filters/SidebarFilters";
-import { ProductCardData } from "@/components/pages/shop/ProductCard";
 import ProductsSection from "@/components/pages/shop/ProductsSection";
 import { useShopFilters } from "@/hooks/shop/useShopFilters";
+import { ProductData } from "@/types/product";
 
 type ShopClientPageProps = {
-  data: ProductCardData[];
+  data: ProductData[];
 };
 
 export default function ShopClientPage({ data }: ShopClientPageProps) {

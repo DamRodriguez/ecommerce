@@ -1,14 +1,14 @@
 "use client";
-import type { ProductCardData } from "@/components/pages/shop/ProductCard";
 import {
   getFilteredProducts,
   initialShopFiltersState,
   shopFiltersReducer,
 } from "@/hooks/shop/shopFiltersReducer";
+import { ProductData } from "@/types/product";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useReducer } from "react";
 
-export function useShopFilters(data: ProductCardData[]) {
+export function useShopFilters(data: ProductData[]) {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
 
