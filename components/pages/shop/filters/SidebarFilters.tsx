@@ -71,7 +71,7 @@ export default function SidebarFilters({
         onClose={closeFilters}
         position="bottom"
         closeButtonClassName="right-md top-md"
-        className="w-full scrollbarCustom max-h-[calc(100svh-var(--height-header-mobile))] bg-surface-bright border-t border-outline p-md"
+        className="w-full scrollbarCustom max-h-[calc(100dvh-var(--height-header-mobile))] bg-surface-bright border-t border-outline p-md"
       >
         <div className="flex flex-col gap-md mt-xl mb-sm">{filtersContent}</div>
 
