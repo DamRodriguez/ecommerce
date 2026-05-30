@@ -64,8 +64,10 @@ export default function CartSection({ onClose }: CartSectionProps) {
             >
               <AnimatePresence mode="popLayout" initial={false}>
                 {cartItems.map((item) => (
-                  <MotionLayoutItem key={item.id}>
-                    <CartItem data={item} />
+                  <MotionLayoutItem
+                    key={`${item.product.id}-${item.variant.id}`}
+                  >
+                    <CartItem item={item} />
                   </MotionLayoutItem>
                 ))}
               </AnimatePresence>

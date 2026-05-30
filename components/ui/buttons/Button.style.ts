@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants";
 
 export const buttonClass = tv({
   base: [
-    "relative overflow-hidden custom-transition-all active:opacity-80",
+    "relative overflow-hidden custom-transition-all",
     "text-sm xl:text-lg font-accent",
     "flex items-center justify-center",
     "px-[1.5rem] xl:px-[2rem] h-[2.7rem] xl:h-[3.5rem]",

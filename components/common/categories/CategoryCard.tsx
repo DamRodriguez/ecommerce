@@ -16,7 +16,7 @@ type CategoryCardProps = {
 export default function CategoryCard({ data }: CategoryCardProps) {
   return (
     <Link
-      className="group hover:border-on-surface relative block h-[25rem] lg:h-[35rem] overflow-hidden border border-on-surface/50 bg-surface-bright custom-transition-all active:opacity-80"
+      className="group hover:border-on-surface relative block h-[25rem] lg:h-[35rem] overflow-hidden border border-on-surface/50 bg-surface-bright custom-transition-all"
       href={{
         pathname: routes.shop,
         query: {

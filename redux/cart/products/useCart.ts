@@ -6,10 +6,10 @@ import {
   removeOneFromCart as removeOneFromCartAction,
   setCart as setCartAction,
   setItemQuantity as setItemQuantityAction,
-  type CartItem,
 } from "@/redux/cart/products/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { ProductData } from "@/types/product";
+import { CartItem, ProductCardData, ProductVariant } from "@/types/product";
+import { getCurrentPrice } from "@/utils/product-price/getCurrentPrice";
 import { useEffect, useMemo, useState } from "react";
 
 const CART_STORAGE_KEY = "cart";
@@ -61,44 +61,55 @@ const useCart = () => {
 
   const totalPrice = useMemo(() => {
     return cartItems.reduce((acc, item) => {
-      return acc + item.price * item.quantity;
+      return acc + getCurrentPrice(item.product) * item.quantity;
     }, 0);
   }, [cartItems]);
 
   const isCartEmpty = cartItems.length === 0;
 
-  const addToCart = (product: ProductData) => {
-    const productAlreadyInCart = isInCart(product.id);
+  const addToCart = (product: ProductCardData, variant: ProductVariant) => {
+    const variantAlreadyInCart = isInCart(variant.id);
 
-    const toastMessage = productAlreadyInCart
-      ? `Unidad de ${product.name} añadida al carrito!`
-      : `${product.name} ha sido añadido al carrito!`;
+    const toastMessage = variantAlreadyInCart
+      ? `Unidad de ${product.name} añadida al carrito`
+      : `${product.name} ha sido añadido al carrito`;
 
-    dispatch(addToCartAction(product));
+    dispatch(
+      addToCartAction({
+        product,
+        variant,
+      }),
+    );
+
     showToast("success", toastMessage);
   };
 
-  const removeOneFromCart = (productId: string) => {
-    const quantity = getItemQuantity(productId);
-    const product = getCartItem(productId);
-    if (!product) return;
+  const removeOneFromCart = (variantId: string) => {
+    const quantity = getItemQuantity(variantId);
 
-    dispatch(removeOneFromCartAction(productId));
+    const item = getCartItem(variantId);
+
+    if (!item) return;
+
+    dispatch(removeOneFromCartAction(variantId));
 
     if (quantity <= 1) {
-      showToast("info", `${product.name} ha sido eliminado del carrito`);
+      showToast("info", `${item.product.name} ha sido eliminado del carrito`);
+
       return;
     }
 
-    showToast("info", `Unidad de ${product.name} eliminada del carrito`);
+    showToast("info", `Unidad de ${item.product.name} eliminada del carrito`);
   };
 
-  const removeFromCart = (productId: string) => {
-    const product = getCartItem(productId);
-    if (!product) return;
+  const removeFromCart = (variantId: string) => {
+    const item = getCartItem(variantId);
 
-    dispatch(removeFromCartAction(productId));
-    showToast("info", `${product.name} ha sido eliminado del carrito`);
+    if (!item) return;
+
+    dispatch(removeFromCartAction(variantId));
+
+    showToast("info", `${item.product.name} ha sido eliminado del carrito`);
   };
 
   const clearCart = () => {
@@ -108,20 +119,25 @@ const useCart = () => {
     showToast("info", "Carrito vaciado");
   };
 
-  const setItemQuantity = (productId: string, quantity: number) => {
-    dispatch(setItemQuantityAction({ productId, quantity }));
+  const setItemQuantity = (variantId: string, quantity: number) => {
+    dispatch(
+      setItemQuantityAction({
+        variantId,
+        quantity,
+      }),
+    );
   };
 
-  const isInCart = (productId: string) => {
-    return cartItems.some((item) => item.id === productId);
+  const isInCart = (variantId: string) => {
+    return cartItems.some((item) => item.variant.id === variantId);
   };
 
-  const getCartItem = (productId: string) => {
-    return cartItems.find((item) => item.id === productId);
+  const getCartItem = (variantId: string) => {
+    return cartItems.find((item) => item.variant.id === variantId);
   };
 
-  const getItemQuantity = (productId: string) => {
-    return getCartItem(productId)?.quantity ?? 0;
+  const getItemQuantity = (variantId: string) => {
+    return getCartItem(variantId)?.quantity ?? 0;
   };
 
   return {

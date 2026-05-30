@@ -1,5 +1,6 @@
 import {} from "@/components/pages/shop/ProductCard";
-import { ProductData } from "@/types/product";
+import { ProductCardData } from "@/types/product";
+import { getCurrentPrice } from "@/utils/product-price/getCurrentPrice";
 
 export type SortOption = "default" | "newest" | "price-asc" | "price-desc";
 
@@ -90,7 +91,7 @@ export function shopFiltersReducer(
 }
 
 export function getFilteredProducts(
-  products: ProductData[],
+  products: ProductCardData[],
   filters: ShopFiltersState,
 ) {
   const normalizedSearch = filters.search.trim().toLowerCase();
@@ -118,11 +119,11 @@ export function getFilteredProducts(
     }
 
     if (filters.sort === "price-asc") {
-      return a.price - b.price;
+      return getCurrentPrice(a) - getCurrentPrice(b);
     }
 
     if (filters.sort === "price-desc") {
-      return b.price - a.price;
+      return getCurrentPrice(b) - getCurrentPrice(a);
     }
 
     return 0;

@@ -4,11 +4,11 @@ import {
   initialShopFiltersState,
   shopFiltersReducer,
 } from "@/hooks/shop/shopFiltersReducer";
-import { ProductData } from "@/types/product";
+import { ProductCardData } from "@/types/product";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useReducer } from "react";
 
-export function useShopFilters(data: ProductData[]) {
+export function useShopFilters(data: ProductCardData[]) {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
 

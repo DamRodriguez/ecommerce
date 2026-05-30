@@ -2,10 +2,10 @@
 import SidebarFilters from "@/components/pages/shop/filters/SidebarFilters";
 import ProductsSection from "@/components/pages/shop/ProductsSection";
 import { useShopFilters } from "@/hooks/shop/useShopFilters";
-import { ProductData } from "@/types/product";
+import { ProductCardData } from "@/types/product";
 
 type ShopClientPageProps = {
-  data: ProductData[];
+  data: ProductCardData[];
 };
 
 export default function ShopClientPage({ data }: ShopClientPageProps) {

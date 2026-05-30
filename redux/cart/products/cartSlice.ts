@@ -1,9 +1,5 @@
-import { ProductData } from "@/types/product";
+import { CartItem, ProductCardData, ProductVariant } from "@/types/product";
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-
-export type CartItem = ProductData & {
-  quantity: number;
-};
 
 interface CartState {
   items: CartItem[];
@@ -21,10 +17,18 @@ const cartSlice = createSlice({
       state.items = action.payload;
     },
 
-    addToCart: (state, action: PayloadAction<ProductData>) => {
-      const product = action.payload;
+    addToCart: (
+      state,
+      action: PayloadAction<{
+        product: ProductCardData;
+        variant: ProductVariant;
+      }>,
+    ) => {
+      const { product, variant } = action.payload;
 
-      const existingItem = state.items.find((item) => item.id === product.id);
+      const existingItem = state.items.find(
+        (item) => item.variant.id === variant.id,
+      );
 
       if (existingItem) {
         existingItem.quantity += 1;
@@ -32,20 +36,26 @@ const cartSlice = createSlice({
       }
 
       state.items.push({
-        ...product,
+        product,
+        variant,
         quantity: 1,
       });
     },
 
     removeOneFromCart: (state, action: PayloadAction<string>) => {
-      const productId = action.payload;
+      const variantId = action.payload;
 
-      const existingItem = state.items.find((item) => item.id === productId);
+      const existingItem = state.items.find(
+        (item) => item.variant.id === variantId,
+      );
 
       if (!existingItem) return;
 
       if (existingItem.quantity <= 1) {
-        state.items = state.items.filter((item) => item.id !== productId);
+        state.items = state.items.filter(
+          (item) => item.variant.id !== variantId,
+        );
+
         return;
       }
 
@@ -53,9 +63,9 @@ const cartSlice = createSlice({
     },
 
     removeFromCart: (state, action: PayloadAction<string>) => {
-      const productId = action.payload;
+      const variantId = action.payload;
 
-      state.items = state.items.filter((item) => item.id !== productId);
+      state.items = state.items.filter((item) => item.variant.id !== variantId);
     },
 
     clearCart: (state) => {
@@ -65,18 +75,23 @@ const cartSlice = createSlice({
     setItemQuantity: (
       state,
       action: PayloadAction<{
-        productId: string;
+        variantId: string;
         quantity: number;
       }>,
     ) => {
-      const { productId, quantity } = action.payload;
+      const { variantId, quantity } = action.payload;
 
       if (quantity <= 0) {
-        state.items = state.items.filter((item) => item.id !== productId);
+        state.items = state.items.filter(
+          (item) => item.variant.id !== variantId,
+        );
+
         return;
       }
 
-      const existingItem = state.items.find((item) => item.id === productId);
+      const existingItem = state.items.find(
+        (item) => item.variant.id === variantId,
+      );
 
       if (!existingItem) return;
 

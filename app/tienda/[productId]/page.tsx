@@ -1,6 +1,6 @@
 import ProductDetailContent from "@/components/pages/productDetail/ProductDetailContent";
 import { routes } from "@/constants/routes";
-import products from "@/data/products.json";
+import { products } from "@/data/products";
 import { createMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -30,7 +30,7 @@ export async function generateMetadata({
 
   return createMetadata({
     title: product.name,
-    description: `${product.name} - ${product.category} / ${product.subcategory}. Precio: $${product.price}.`,
+    description: `${product.name} - ${product.category} / ${product.subcategory}. Precio: $${product.originalPrice}.`,
     path,
     image: product.image,
   });

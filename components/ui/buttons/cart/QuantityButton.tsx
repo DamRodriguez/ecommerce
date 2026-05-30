@@ -2,24 +2,28 @@
 import MotionQuantity from "@/components/motion/MotionQuantity";
 import Button from "@/components/ui/buttons/Button";
 import useCart from "@/redux/cart/products/useCart";
-import { ProductData } from "@/types/product";
+import { ProductCardData, ProductVariant } from "@/types/product";
 import { Minus, Plus } from "lucide-react";
 
 type QuantityButtonProps = {
-  product: ProductData;
+  product: ProductCardData;
+  variant: ProductVariant;
 };
 
-export default function QuantityButton({ product }: QuantityButtonProps) {
+export default function QuantityButton({
+  product,
+  variant,
+}: QuantityButtonProps) {
   const { addToCart, removeOneFromCart, getItemQuantity } = useCart();
 
   const handleRemoveOneFromCart = () => {
-    removeOneFromCart(product.id);
+    removeOneFromCart(variant.id);
   };
   const handleAddOneToCart = () => {
-    addToCart(product);
+    addToCart(product, variant);
   };
 
-  const quantity = getItemQuantity(product.id);
+  const quantity = getItemQuantity(variant.id);
 
   return (
     <div className="flex justify-between">
@@ -33,7 +37,7 @@ export default function QuantityButton({ product }: QuantityButtonProps) {
         <Minus className="w-4 h-4" />
       </Button>
 
-      <div className="flex px-xxs w-full items-center justify-center border-y border-outline font-accent text-xs xl:text-base">
+      <div className="flex px-xxs w-full items-center justify-center border-y border-outline font-accent text-xs xl:text-sm">
         <MotionQuantity duration={0.2} motionKey={quantity}>
           {quantity}
         </MotionQuantity>

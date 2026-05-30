@@ -1,7 +1,7 @@
-import { ProductData } from "@/types/product";
+import { ProductCardData } from "@/types/product";
 
 type ProductDetailContentProps = {
-  product: ProductData;
+  product: ProductCardData;
 };
 
 export default function ProductDetailContent({

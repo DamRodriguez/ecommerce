@@ -4,7 +4,7 @@ import SpaceX from "@/components/layout/SpaceX";
 import MotionSlide from "@/components/motion/MotionSlide";
 import MotionStretch from "@/components/motion/MotionStretch";
 import config from "@/config/config";
-import products from "@/data/products.json";
+import { products } from "@/data/products";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
 export default function CategoriesSection() {

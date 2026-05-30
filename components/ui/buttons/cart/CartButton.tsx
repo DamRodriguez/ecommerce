@@ -3,15 +3,16 @@ import MotionQuantity from "@/components/motion/MotionQuantity";
 import MotionSlidePresence from "@/components/motion/MotionSlidePresence";
 import Button from "@/components/ui/buttons/Button";
 import useCart from "@/redux/cart/products/useCart";
-import { ProductData } from "@/types/product";
+import { ProductCardData, ProductVariant } from "@/types/product";
 import { AnimatePresence } from "framer-motion";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 
 type CartButtonProps = {
-  product: ProductData;
+  product: ProductCardData;
+  variant: ProductVariant;
 };
 
-export default function CartButton({ product }: CartButtonProps) {
+export default function CartButton({ product, variant }: CartButtonProps) {
   const {
     addToCart,
     removeOneFromCart,
@@ -20,19 +21,19 @@ export default function CartButton({ product }: CartButtonProps) {
     isCartLoaded,
   } = useCart();
 
-  const productIsInCart = isInCart(product.id);
-  const quantity = getItemQuantity(product.id);
+  const productIsInCart = isInCart(variant.id);
+  const quantity = getItemQuantity(variant.id);
 
   const handleFirstAddToCart = () => {
-    addToCart(product);
+    addToCart(product, variant);
   };
 
   const handleRemoveOneFromCart = () => {
-    removeOneFromCart(product.id);
+    removeOneFromCart(variant.id);
   };
 
   const handleAddOneToCart = () => {
-    addToCart(product);
+    addToCart(product, variant);
   };
 
   if (!isCartLoaded) {

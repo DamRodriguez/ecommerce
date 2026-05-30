@@ -3,11 +3,11 @@ import MotionOpacity from "@/components/motion/MotionOpacity";
 import MotionSlide from "@/components/motion/MotionSlide";
 import MotionStretch from "@/components/motion/MotionStretch";
 import ProductCard from "@/components/pages/shop/ProductCard";
-import { ProductData } from "@/types/product";
+import { ProductCardData } from "@/types/product";
 import { PackageSearch } from "lucide-react";
 
 type ProductsSectionProps = {
-  data: ProductData[];
+  data: ProductCardData[];
   totalProducts: number;
 };
 
