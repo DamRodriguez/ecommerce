@@ -1,3 +1,4 @@
+"use client";
 import CustomImage from "@/components/other/CustomImage";
 import QuantityButton from "@/components/ui/buttons/cart/QuantityButton";
 import useCart from "@/redux/cart/products/useCart";
@@ -22,8 +23,6 @@ function CartItem({ item }: CartItemProps) {
   const unitPrice = product.salePrice ?? product.originalPrice;
 
   const totalPrice = unitPrice * quantity;
-
-  const hasDiscount = product.salePrice !== undefined;
 
   return (
     <div className="flex items-start px-lg py-lg group hover:bg-outline/30 custom-transition-all">
