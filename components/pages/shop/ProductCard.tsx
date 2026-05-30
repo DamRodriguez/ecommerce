@@ -119,11 +119,12 @@ function ProductCard({ data }: ProductCardProps) {
                 type="button"
                 onClick={() => handleSizeChange(size)}
                 className={clsx(
-                  "px-sm py-xxs border text-md font-accent custom-transition-all cursor-pointer hover:bg-on-surface hover:text-surface",
+                  "px-sm py-xxs border text-md font-accent cursor-pointer",
                   {
                     "bg-on-surface text-surface border-on-surface":
                       selectedVariant.size === size,
-                    "border-outline": selectedVariant.size !== size,
+                    "border-outline hover:border-on-surface":
+                      selectedVariant.size !== size,
                   },
                 )}
               >
