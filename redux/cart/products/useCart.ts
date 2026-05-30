@@ -12,7 +12,7 @@ import { CartItem, ProductCardData, ProductVariant } from "@/types/product";
 import { getCurrentPrice } from "@/utils/product-price/getCurrentPrice";
 import { useEffect, useMemo, useState } from "react";
 
-const CART_STORAGE_KEY = "cart";
+const CART_STORAGE_KEY = "cart_v2";
 
 const useCart = () => {
   const dispatch = useAppDispatch();
