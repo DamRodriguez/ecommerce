@@ -115,6 +115,7 @@ function ProductCard({ data }: ProductCardProps) {
           <div className="flex flex-wrap gap-3 relative z-20 w-fit">
             {availableSizes.map((size) => (
               <button
+                key={size}
                 type="button"
                 onClick={() => handleSizeChange(size)}
                 className={clsx(
