@@ -24,9 +24,9 @@ export default function CartSection({ onClose }: CartSectionProps) {
 
   return (
     <div className="grid h-[var(--cart-vh,100dvh)] min-h-0 grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden bg-surface-bright">
-      <div className="flex justify-between items-center px-lg h-header-mobile xl:h-header-desktop border-b border-outline bg-surface">
+      <div className="flex justify-between items-center px-md lg:px-lg h-header-mobile xl:h-header-desktop border-b border-outline bg-surface">
         <div>
-          <h2 className="text-lg xl:text-2xl text-on-surface">
+          <h2 className="text-lg xl:text-xl text-on-surface">
             Carrito de Compras
           </h2>
 
@@ -45,13 +45,15 @@ export default function CartSection({ onClose }: CartSectionProps) {
           )}
         </div>
 
-        <button
-          onClick={onClose}
-          aria-label="Cerrar carrito"
-          className="cursor-pointer"
-        >
-          <X className="w-6 h-6 xl:w-7 xl:h-7" />
-        </button>
+        <div className="h-full py-md lg:py-lg flex items-start">
+          <button
+            onClick={onClose}
+            aria-label="Cerrar carrito"
+            className="cursor-pointer"
+          >
+            <X className="w-6 h-6 xl:w-7 xl:h-7" />
+          </button>
+        </div>
       </div>
 
       <div className="min-h-0 overflow-hidden">
@@ -79,7 +81,7 @@ export default function CartSection({ onClose }: CartSectionProps) {
       </div>
 
       {hasCartItems && (
-        <div className="border-t border-outline bg-surface p-lg w-full z-10 pb-[calc(var(--spacing-lg)+env(safe-area-inset-bottom))]">
+        <div className="border-t border-outline bg-surface p-md lg:p-lg w-full z-10 pb-[calc(var(--spacing-lg)+env(safe-area-inset-bottom))]">
           <div className="flex justify-between items-end mb-xs gap-sm">
             <span className="text-on-surface tracking-widest">SUBTOTAL</span>
 

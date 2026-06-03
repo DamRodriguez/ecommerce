@@ -50,7 +50,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           <ScrollToTop />
           <ThemeProvider>
             <ProgressBarProvider>
-              <div className="min-w-[20rem] max-w-[120rem] pt-header-mobile xl:pt-header-desktop mx-auto w-full bg-surface overflow-clip">
+              <div className="min-w-[22rem] max-w-[120rem] pt-header-mobile xl:pt-header-desktop mx-auto w-full bg-surface overflow-clip">
                 <Header />
                 <ToastContainer />
                 <div className="min-h-screen-content">{children}</div>
