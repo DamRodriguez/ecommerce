@@ -13,12 +13,14 @@ type FiltersContentProps = {
   categories: string[];
   filters: ShopFiltersState;
   dispatch: Dispatch<ShopFiltersAction>;
+  isMobileFiltersOpen: boolean;
 };
 
 export default function FiltersContent({
   categories,
   filters,
   dispatch,
+  isMobileFiltersOpen,
 }: FiltersContentProps) {
   return (
     <>
@@ -57,6 +59,7 @@ export default function FiltersContent({
         }
         full
         customUppercase
+        outline={isMobileFiltersOpen}
       >
         <p>Limpiar filtros</p>
       </Button>

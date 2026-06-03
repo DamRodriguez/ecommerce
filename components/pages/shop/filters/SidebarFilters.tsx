@@ -39,6 +39,7 @@ export default function SidebarFilters({
       categories={categories}
       filters={filters}
       dispatch={dispatch}
+      isMobileFiltersOpen={isFiltersOpen}
     />
   );
 
@@ -72,10 +73,10 @@ export default function SidebarFilters({
         visible={isFiltersOpen}
         onClose={closeFilters}
         position="bottom"
-        closeButtonClassName="right-md top-md"
+        closeButton={null}
         className="w-full scrollbarCustom max-h-[calc(100dvh-var(--height-header-mobile))] bg-surface-bright border-t border-outline p-md"
       >
-        <div className="flex flex-col gap-md mt-xl mb-sm">{filtersContent}</div>
+        <div className="flex flex-col gap-md mb-sm">{filtersContent}</div>
 
         <Button onClick={closeFilters} full customUppercase>
           Ver resultados

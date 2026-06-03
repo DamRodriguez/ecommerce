@@ -12,7 +12,7 @@ import { getDiscountPercentage } from "@/utils/product-price/getDiscountPercenta
 import { hasDiscount } from "@/utils/product-price/hasDiscount";
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
-import { ShoppingBag } from "lucide-react";
+import { Search, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import { memo } from "react";
 
@@ -62,7 +62,7 @@ function ProductCard({ data }: ProductCardProps) {
         <Link
           href={routes.productDetail(data.id)}
           aria-label={`Ver detalle de ${data.name}`}
-          className="absolute inset-0 z-10"
+          className="absolute inset-0 z-10 group"
         >
           <CustomImage
             src={data.image}
@@ -71,7 +71,12 @@ function ProductCard({ data }: ProductCardProps) {
             className="w-full h-full object-cover group-hover:scale-110 custom-transition-all"
           />
 
-          <div className="absolute inset-0 group-hover:bg-black/15 custom-transition-all pointer-events-none" />
+          <div className="hidden pb-[3.5rem] xl:flex opacity-0 hover:opacity-100 custom-transition-all absolute bottom-0 w-full h-full bg-black/35 items-center justify-center gap-2 text-surface group">
+            <Search className="stroke-white w-7 h-7 custom-transition-all" />
+            <p className="text-white font-semibold tracking-wider lg:text-lg font-accent">
+              Ver detalle
+            </p>
+          </div>
         </Link>
 
         <div className="absolute bottom-0 left-0 w-full z-20 xl:translate-y-full opacity-100 xl:group-hover:translate-y-0 custom-transition-all">
